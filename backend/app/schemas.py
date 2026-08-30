@@ -6,3 +6,10 @@ class WordRequest(BaseModel):
     character: str
     pinyin: str | None = None
     translate: str | None = None
+
+
+class WordResponse(BaseModel):
+    id: int
+    character: str
+    pinyin: str
+    translate: str

@@ -1,2 +1,20 @@
 *.txt
 
+.env
+.env.*
+!.env.example
+
+.venv/
+venv/
+
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+
+.pytest_cache/
+.coverage
+htmlcov/
+
+.vscode/
+.idea/
