@@ -1,9 +1,14 @@
 from pydantic import BaseModel
 
 
-# модель для описания действий со словом
 class WordRequest(BaseModel):
     character: str
+    pinyin: str
+    translate: str
+
+
+class WordUpdateRequest(BaseModel):
+    character: str | None = None
     pinyin: str | None = None
     translate: str | None = None
 
