@@ -1,0 +1,271 @@
+/* Базовая сетка */
+.words-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Основной контейнер карточки */
+.word-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 160px;
+  padding: 16px 20px;
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  box-sizing: border-box;
+  transition:
+    transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Эффекты наведения только для устройств с мышью */
+@media (hover: hover) and (pointer: fine) {
+  .word-card:hover {
+    border-color: #d1d1d1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transform: translateY(-1px);
+  }
+
+  .word-card:hover .word-delete-btn {
+    opacity: 1;
+  }
+}
+
+/* Верхняя панель */
+.word-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 24px;
+  gap: 8px;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #d0d0d0;
+  flex-shrink: 0;
+}
+
+.status-dot.is-urgent {
+  background-color: #666666;
+}
+
+.word-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Статус-бейдж */
+.word-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #666666;
+  background-color: #f2f2f2;
+  padding: 3px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.word-badge.badge-urgent {
+  color: #111111;
+  background-color: #e8e8e8;
+}
+
+/* Кнопка удаления */
+.word-delete-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  color: #999999;
+  font-size: 1.2rem;
+  line-height: 1;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.5; /* По умолчанию слегка видна для удобства */
+  transition: all 0.15s ease;
+  touch-action: manipulation;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .word-delete-btn {
+    opacity: 0.4;
+  }
+}
+
+.word-delete-btn:hover {
+  background-color: #f0f0f0;
+  color: #111111;
+  opacity: 1;
+}
+
+.word-delete-btn:active {
+  background-color: #e5e5e5;
+}
+
+/* Главный элемент - Иероглиф */
+.word-card-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  padding: 12px 0;
+  text-align: center;
+}
+
+.word-hanzi {
+  font-size: 2.25rem;
+  font-weight: 500;
+  color: #111111;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  word-break: keep-all;
+}
+
+/* Подвал карточки */
+.word-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.word-pinyin {
+  color: #111111;
+  font-weight: 500;
+}
+
+.word-divider {
+  color: #cccccc;
+  font-weight: 300;
+  user-select: none;
+}
+
+.word-translation {
+  color: #666666;
+  font-weight: 400;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Кнопка добавления */
+.word-add-btn {
+  padding: 5px 10px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  background-color: transparent;
+  color: #333333;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+  touch-action: manipulation;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .word-add-btn:hover:not(:disabled) {
+    background-color: #f2f2f2;
+    border-color: #b0b0b0;
+    color: #111111;
+  }
+}
+
+.word-add-btn:active:not(:disabled) {
+  background-color: #e8e8e8;
+}
+
+.word-add-btn.is-added {
+  border-color: transparent;
+  background-color: #f0f0f0;
+  color: #888888;
+  cursor: default;
+}
+
+.word-add-btn:disabled {
+  opacity: 0.7;
+}
+
+/* Пустое состояние */
+.words-empty {
+  padding: 32px 0;
+  text-align: center;
+  color: #777777;
+  font-size: 0.95rem;
+}
+
+/* ==========================================
+   Адаптивные медиа-запросы (Media Queries)
+   ========================================== */
+
+/* Мобильные устройства (ширина до 480px) */
+@media (max-width: 480px) {
+  .words-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .word-card {
+    min-height: 140px;
+    padding: 12px 14px;
+    border-radius: 10px;
+  }
+
+  .word-hanzi {
+    font-size: 1.85rem;
+  }
+
+  .word-card-footer {
+    font-size: 0.8rem;
+    gap: 4px 6px;
+  }
+
+  .word-delete-btn {
+    opacity: 0.7; /* На смартфонах кнопка всегда виднее, так как hover отсутствует */
+  }
+
+  .word-badge {
+    font-size: 0.65rem;
+    padding: 2px 6px;
+  }
+
+  .word-add-btn {
+    padding: 4px 8px;
+    font-size: 0.7rem;
+  }
+}
+
+/* Экранные устройства с тачскрином (планшеты и смартфоны) */
+@media (pointer: coarse) {
+  /* Увеличение области клика для крестика на сенсорных экранах */
+  .word-delete-btn {
+    min-width: 32px;
+    min-height: 32px;
+  }
+
+  .word-add-btn {
+    padding: 6px 12px;
+  }
+}

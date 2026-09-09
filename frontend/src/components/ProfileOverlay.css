@@ -1,0 +1,194 @@
+/* =========================
+   PROFILE
+   ========================= */
+
+.profile-overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(2px);
+
+  z-index: 1000;
+}
+
+.profile-modal {
+  position: relative;
+
+  width: 100%;
+  max-width: 760px;
+
+  padding: 48px;
+
+  background-color: #efefef;
+  border: 1px solid #d0d0d0;
+  border-radius: 22px;
+
+  font-family: inherit;
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   CLOSE
+   ========================= */
+
+.profile-close {
+  position: absolute;
+
+  top: 32px;
+  right: 32px;
+
+  width: 24px;
+  height: 24px;
+
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: none;
+  border: none;
+
+  font-family: inherit;
+  font-size: 24px;
+  line-height: 1;
+
+  color: #888888;
+
+  cursor: pointer;
+
+  transition: color 0.15s ease;
+}
+
+.profile-close:hover {
+  color: #1a1a1a;
+}
+
+/* =========================
+   PROFILE HEADER
+   ========================= */
+
+.profile-header {
+  display: flex;
+  align-items: center;
+
+  gap: 32px;
+
+  margin-bottom: 38px;
+}
+
+/* =========================
+   PROFILE PHOTO
+   ========================= */
+
+.profile-photo {
+  flex-shrink: 0;
+
+  width: 144px;
+  height: 144px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px dashed #b8b8b8;
+  border-radius: 50%;
+
+  background-color: #e5e5e5;
+  color: #888888;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.profile-photo:hover {
+  border-color: #1a1a1a;
+  border-style: solid;
+
+  color: #1a1a1a;
+}
+
+.profile-photo span {
+  font-size: 32px;
+  line-height: 1;
+}
+
+/* =========================
+   PROFILE INFO
+   ========================= */
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+
+  min-width: 0;
+}
+
+.profile-info-username {
+  margin: 0;
+
+  font-family: inherit;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+
+  color: #1a1a1a;
+}
+
+.profile-about {
+  margin: 0;
+
+  font-family: inherit;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.4;
+
+  color: #888888;
+}
+
+/* =========================
+   LOG OUT
+   ========================= */
+
+.profile-logout {
+  display: block;
+
+  padding: 12px 28px;
+  min-width: 144px;
+
+  background: none;
+  border: 2px solid #d0d0d0;
+  border-radius: 10px;
+
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 400;
+
+  color: #888888;
+
+  cursor: pointer;
+
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.profile-logout:hover {
+  color: #1a1a1a;
+
+  border-color: #1a1a1a;
+
+  background-color: #e5e5e5;
+}
