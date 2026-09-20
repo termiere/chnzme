@@ -1,9 +1,78 @@
+/* words page */
+
+.words-list {
+  display: flex;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.words-block {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  box-sizing: border-box;
+
+  font-family: inherit;
+  text-decoration: none;
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .words-block:hover {
+    border-color: #d1d1d1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transform: translateY(-1px);
+  }
+
+  .words-block:hover .word-delete-btn {
+    opacity: 1;
+  }
+}
+
+.words-block-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.words-block-description {
+  font-size: 16px;
+  font-weight: normal;
+  color: #888888;
+}
+
+.words-section {
+  margin-bottom: 10px;
+}
+
+.words-section h2 {
+  color: #989898;
+  margin-bottom: 10px;
+}
+
+/* hsk-content */
 /* Базовая сетка */
+.hsk-content {
+  margin-top: 10px;
+}
+
 .words-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 16px;
-  margin-top: 24px;
+  gap: 10px;
   width: 100%;
   box-sizing: border-box;
 }
@@ -268,4 +337,48 @@
   .word-add-btn {
     padding: 6px 12px;
   }
+}
+
+.back-to-levels-card {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  /* gap: 10px; */
+
+  padding: 5px 20px 5px 10px;
+  margin: 10px 0px;
+  font-size: 16px;
+
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+
+  text-align: left;
+  text-decoration: none;
+  color: #1a1a1a;
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition:
+    transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .back-to-levels-card:hover {
+    border-color: #d1d1d1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transform: translateY(-1px);
+  }
+}
+
+.back-to-levels-card:active {
+  transform: translateY(0);
+}
+
+.back-to-levels-arrow {
+  font-size: 1rem;
+  color: #999999;
 }

@@ -1,4 +1,4 @@
-import "../components/Words.css";
+import "../styles/Words.css";
 
 type WordItemProps = {
   hanzi: string;

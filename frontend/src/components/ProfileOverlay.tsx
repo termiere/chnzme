@@ -1,5 +1,5 @@
 import { useAuth } from "../context/AuthContext";
-import "./ProfileOverlay.css";
+import "../styles/ProfileOverlay.css";
 
 type ProfileOverlayProps = {
   onClose: () => void;

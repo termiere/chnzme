@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { Word } from "../api/words";
-import "../components/Words.css";
+import "../styles/Words.css";
 
 interface WordListProps {
   words: Word[];
@@ -54,7 +54,6 @@ export function WordList({
     <div className="words-grid">
       {words.map((item) => {
         const isAdded = userWordIds.has(item.id) || addedWordIds.has(item.id);
-
         const isPending = pendingWordId === item.id;
 
         return (

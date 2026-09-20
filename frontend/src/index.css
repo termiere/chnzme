@@ -14,15 +14,6 @@ body {
   min-width: 0;
 }
 
-button,
-input {
-  font: inherit;
-}
-
-code {
-  font-family: ui-monospace, Consolas, monospace;
-}
-
 #root {
   margin: 0 auto;
   min-height: 100svh;
@@ -33,43 +24,37 @@ code {
 
 h1,
 h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: normal;
+  line-height: normal;
+  text-align: left;
+  background: none;
+  border: none;
 }
 
 h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
+  color: #1a1a1a;
 }
 
 h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-}
-
-@media (max-width: 1024px) {
-  h1 {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-
-  h2 {
-    font-size: 20px;
-  }
+  color: #989898;
 }
 
 p {
   margin: 0;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+button,
+input {
+  border: none;
+  background: none;
+
+  text-align: left;
+  font-weight: 700;
+  font-family: inherit;
+  font-size: 18px;
+  line-height: normal;
+
+  cursor: pointer;
 }

@@ -1,9 +1,12 @@
 // src/pages/Dictionary.tsx
 import { useEffect, useState } from "react";
+import { ChevronLeft } from "lucide-react";
+import { Link } from "react-router-dom";
+
 import WordItem from "../components/WordItem";
 import { type UserWord, getUserWords, deleteUserWord } from "../api/userWords";
 
-import "../components/Words.css";
+import "../styles/Words.css";
 
 function Dictionary() {
   const [userWords, setUserWords] = useState<UserWord[]>([]);
@@ -31,19 +34,16 @@ function Dictionary() {
   }, []);
 
   const handleDelete = async (wordId: number) => {
-    // 1. Оптимистично удаляем слово из UI
     const previousWords = [...userWords];
     setUserWords((currentWords) =>
       currentWords.filter((item) => item.word.id !== wordId),
     );
 
     try {
-      // 2. Вызываем DELETE /user-words/{word_id}
       await deleteUserWord(wordId);
     } catch (err) {
       console.error(err);
       alert("Не удалось удалить слово. Попробуйте снова.");
-      // 3. Откатываем UI назад в случае ошибки
       setUserWords(previousWords);
     }
   };
@@ -53,7 +53,12 @@ function Dictionary() {
 
   return (
     <section className="dictionary">
-      <h1># Dictionary</h1>
+      <h1>#dictionary</h1>
+
+      <Link to="/words" className="back-to-levels-card">
+        <ChevronLeft />
+        <span>back</span>
+      </Link>
 
       {userWords.length === 0 ? (
         <p>Ваш словарь пуст. Добавьте слова в разделе HSK!</p>

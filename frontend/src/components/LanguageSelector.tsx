@@ -6,8 +6,8 @@ type LanguageSelectorProps = {
 };
 
 const languages = [
-  { code: "ru", label: "RU" },
-  { code: "en", label: "EN" },
+  { code: "ru", label: "ru" },
+  { code: "en", label: "en" },
 ];
 
 function LanguageSelector({ language, setLanguage }: LanguageSelectorProps) {

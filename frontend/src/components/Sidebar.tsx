@@ -1,46 +1,41 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
+
 import { useAuth } from "../context/AuthContext";
 import ProfileOverlay from "./ProfileOverlay";
 import LanguageSelector from "./LanguageSelector";
 
+import "../styles/Sidebar.css";
+
 type SidebarProps = {
-  currentPage: string;
-  setCurrentPage: (page: string) => void;
   language: string;
   setLanguage: (language: string) => void;
   openAuth: () => void;
 };
 
-function Sidebar({
-  currentPage,
-  setCurrentPage,
-  language,
-  setLanguage,
-  openAuth,
-}: SidebarProps) {
+function Sidebar({ language, setLanguage, openAuth }: SidebarProps) {
   const { user } = useAuth();
-
   const [isProfileOpen, setIsProfileOpen] = useState(false);
 
   return (
     <>
       <aside className="sidebar">
-        <h2>CHNZME</h2>
+        <h1>CHNZME</h1>
 
         <nav>
-          <button
-            className={currentPage === "readme" ? "active" : ""}
-            onClick={() => setCurrentPage("readme")}
+          <NavLink
+            to="/readme"
+            className={({ isActive }) => (isActive ? "active" : "")}
           >
             README.md
-          </button>
+          </NavLink>
 
-          <button
-            className={currentPage === "words" ? "active" : ""}
-            onClick={() => setCurrentPage("words")}
+          <NavLink
+            to="/words"
+            className={({ isActive }) => (isActive ? "active" : "")}
           >
-            Words
-          </button>
+            words
+          </NavLink>
         </nav>
 
         <div className="sidebar-bottom">
@@ -53,7 +48,7 @@ function Sidebar({
             </button>
           ) : (
             <button className="login-button" onClick={openAuth}>
-              Sign in
+              sign in
             </button>
           )}
 

@@ -1,5 +1,7 @@
 // src/App.tsx
 import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import "./App.css";
 
 import Sidebar from "./components/Sidebar";
@@ -10,28 +12,31 @@ import Words from "../src/pages/Words";
 import Dictionary from "./pages/Dictionary";
 
 function App() {
-  const [currentPage, setCurrentPage] = useState("readme");
   const [language, setLanguage] = useState("ru");
   const [isAuthOpen, setIsAuthOpen] = useState(false);
 
   return (
-    <div className="app">
-      <Sidebar
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-        language={language}
-        setLanguage={setLanguage}
-        openAuth={() => setIsAuthOpen(true)}
-      />
+    <BrowserRouter>
+      <div className="app">
+        <Sidebar
+          language={language}
+          setLanguage={setLanguage}
+          openAuth={() => setIsAuthOpen(true)}
+        />
 
-      <main className="main">
-        {currentPage === "readme" && <Readme language={language} />}
-        {currentPage === "words" && <Words setCurrentPage={setCurrentPage} />}
-        {currentPage === "dictionary" && <Dictionary />}
-      </main>
+        <main className="main">
+          <Routes>
+            <Route path="/" element={<Readme language={language} />} />
+            <Route path="/readme" element={<Readme language={language} />} />
+            <Route path="/words" element={<Words />} />
+            <Route path="/words/hsk/:level" element={<Words />} />
+            <Route path="/dictionary" element={<Dictionary />} />
+          </Routes>
+        </main>
 
-      {isAuthOpen && <AuthModal onClose={() => setIsAuthOpen(false)} />}
-    </div>
+        {isAuthOpen && <AuthModal onClose={() => setIsAuthOpen(false)} />}
+      </div>
+    </BrowserRouter>
   );
 }
 
