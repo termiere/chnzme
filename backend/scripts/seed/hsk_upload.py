@@ -14,16 +14,25 @@ from app.models.user_words import UserWord
 from app.models.word_translations import WordTranslation
 from app.schemas.hsk import HSKWord
 
-DATA_PATH = Path(__file__).resolve().parents[3] / "data" / "hsk" / "hsk1.json"
+DATA_DIR = Path(__file__).resolve().parents[3] / "data" / "hsk"
+
+DATA_PATHS = [
+    DATA_DIR / "hsk1.json",
+    DATA_DIR / "hsk2.json",
+    DATA_DIR / "hsk3.json",
+]
 
 
 def seed_hsk() -> None:
-    with open(DATA_PATH, "r", encoding="utf-8") as file:
-        data = json.load(file)
+    all_words = []
 
-    words = [HSKWord.model_validate(word) for word in data]
+    for data_path in DATA_PATHS:
+        with open(data_path, "r", encoding="utf-8") as file:
+            data = json.load(file)
 
-    json_characters = {word.character for word in words}
+        all_words.extend(HSKWord.model_validate(word) for word in data)
+
+    json_words = {(word.character, word.hsk_level) for word in all_words}
 
     added_words = 0
     updated_words = 0
@@ -32,9 +41,10 @@ def seed_hsk() -> None:
 
     with Session(engine) as session:
         db_words = session.scalars(select(Word)).all()
-
         for word in db_words:
-            if word.character not in json_characters:
+            key = (word.character, word.hsk_level)
+
+            if key not in json_words:
                 session.execute(delete(UserWord).where(UserWord.word_id == word.id))
 
                 session.execute(
@@ -44,12 +54,17 @@ def seed_hsk() -> None:
                 session.delete(word)
                 deleted_words += 1
 
-        for hsk_word in words:
+        for hsk_word in all_words:
             word = session.scalar(
-                select(Word).where(Word.character == hsk_word.character)
+                select(Word).where(
+                    Word.character == hsk_word.character,
+                    Word.pinyin == hsk_word.pinyin,
+                    Word.hsk_level == hsk_word.hsk_level,
+                )
             )
 
             if word is None:
+
                 word = Word(
                     character=hsk_word.character,
                     pinyin=hsk_word.pinyin,
@@ -62,9 +77,9 @@ def seed_hsk() -> None:
                 added_words += 1
 
             else:
-                word.pinyin = hsk_word.pinyin
-                word.hsk_level = hsk_word.hsk_level
-                updated_words += 1
+                if word.pinyin != hsk_word.pinyin:
+                    word.pinyin = hsk_word.pinyin
+                    updated_words += 1
 
             translations = {
                 "en": hsk_word.translate.en,
@@ -72,14 +87,17 @@ def seed_hsk() -> None:
             }
 
             for language, translation in translations.items():
+
                 existing_translation = session.scalar(
-                    select(WordTranslation).where(
-                        WordTranslation.word_id == word.id,
-                        WordTranslation.language == language,
+                    select(Word).where(
+                        Word.character == hsk_word.character,
+                        Word.pinyin == hsk_word.pinyin,
+                        Word.hsk_level == hsk_word.hsk_level,
                     )
                 )
 
                 if existing_translation is None:
+
                     session.add(
                         WordTranslation(
                             word_id=word.id,

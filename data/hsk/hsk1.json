@@ -1,0 +1,2702 @@
+[
+  {
+    "character": "爱",
+    "pinyin": "ài",
+    "translate": {
+      "en": "to love",
+      "ru": "любить"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "吧",
+    "pinyin": "ba",
+    "translate": {
+      "en": "suggestion/probability particle",
+      "ru": "побудительная/предположительная частица"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "八",
+    "pinyin": "bā",
+    "translate": {
+      "en": "eight",
+      "ru": "восемь"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "爸爸",
+    "pinyin": "bàba",
+    "translate": {
+      "en": "dad, father",
+      "ru": "папа"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "百",
+    "pinyin": "bǎi",
+    "translate": {
+      "en": "hundred",
+      "ru": "сто"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "白天",
+    "pinyin": "báitiān",
+    "translate": {
+      "en": "daytime",
+      "ru": "день (светлое время)"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "半",
+    "pinyin": "bàn",
+    "translate": {
+      "en": "half",
+      "ru": "половина"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "包子",
+    "pinyin": "bāozi",
+    "translate": {
+      "en": "steamed stuffed bun",
+      "ru": "баоцзы (паровые пирожки)"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "杯子",
+    "pinyin": "bēizi",
+    "translate": {
+      "en": "cup, glass",
+      "ru": "чашка, стакан"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "本",
+    "pinyin": "běn",
+    "translate": {
+      "en": "measure word for books",
+      "ru": "счётное слово для книг"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "边",
+    "pinyin": "biān",
+    "translate": {
+      "en": "side, edge",
+      "ru": "сторона, край"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "病",
+    "pinyin": "bìng",
+    "translate": {
+      "en": "illness, to be ill",
+      "ru": "болезнь, болеть"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "不",
+    "pinyin": "bù",
+    "translate": {
+      "en": "not, no",
+      "ru": "не, нет"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "不客气",
+    "pinyin": "bù kèqi",
+    "translate": {
+      "en": "you're welcome",
+      "ru": "не за что"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "不要",
+    "pinyin": "bùyào",
+    "translate": {
+      "en": "don't, must not",
+      "ru": "не надо, нельзя"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "菜",
+    "pinyin": "cài",
+    "translate": {
+      "en": "dish, vegetable",
+      "ru": "блюдо, овощи"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "茶",
+    "pinyin": "chá",
+    "translate": {
+      "en": "tea",
+      "ru": "чай"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "唱",
+    "pinyin": "chàng",
+    "translate": {
+      "en": "to sing",
+      "ru": "петь"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "超市",
+    "pinyin": "chāoshì",
+    "translate": {
+      "en": "supermarket",
+      "ru": "супермаркет"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "车",
+    "pinyin": "chē",
+    "translate": {
+      "en": "car, vehicle",
+      "ru": "машина, транспорт"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "吃",
+    "pinyin": "chī",
+    "translate": {
+      "en": "to eat",
+      "ru": "есть, кушать"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "穿",
+    "pinyin": "chuān",
+    "translate": {
+      "en": "to wear, put on",
+      "ru": "носить, надевать"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "出租车",
+    "pinyin": "chūzūchē",
+    "translate": {
+      "en": "taxi",
+      "ru": "такси"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "大",
+    "pinyin": "dà",
+    "translate": {
+      "en": "big, large",
+      "ru": "большой"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "打电话",
+    "pinyin": "dǎ diànhuà",
+    "translate": {
+      "en": "to make a phone call",
+      "ru": "звонить по телефону"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "大家",
+    "pinyin": "dàjiā",
+    "translate": {
+      "en": "everyone",
+      "ru": "все, каждый"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "到",
+    "pinyin": "dào",
+    "translate": {
+      "en": "to arrive, to reach",
+      "ru": "прибывать, доходить до"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "大学",
+    "pinyin": "dàxué",
+    "translate": {
+      "en": "university",
+      "ru": "университет"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "大学生",
+    "pinyin": "dàxuéshēng",
+    "translate": {
+      "en": "university student",
+      "ru": "студент"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "的",
+    "pinyin": "de",
+    "translate": {
+      "en": "possessive/attribute particle",
+      "ru": "притяжательная частица"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "第",
+    "pinyin": "dì",
+    "translate": {
+      "en": "ordinal number prefix",
+      "ru": "префикс порядковых числительных"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "店",
+    "pinyin": "diàn",
+    "translate": {
+      "en": "shop, store",
+      "ru": "магазин, лавка"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "点",
+    "pinyin": "diǎn",
+    "translate": {
+      "en": "o'clock, point, a little",
+      "ru": "час, точка, немного"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "电话",
+    "pinyin": "diànhuà",
+    "translate": {
+      "en": "telephone, call",
+      "ru": "телефон, звонок"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "电脑",
+    "pinyin": "diànnǎo",
+    "translate": {
+      "en": "computer",
+      "ru": "компьютер"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "电视",
+    "pinyin": "diànshì",
+    "translate": {
+      "en": "TV",
+      "ru": "телевизор"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "电影",
+    "pinyin": "diànyǐng",
+    "translate": {
+      "en": "movie",
+      "ru": "фильм"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "电影院",
+    "pinyin": "diànyǐngyuàn",
+    "translate": {
+      "en": "cinema",
+      "ru": "кинотеатр"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "弟弟",
+    "pinyin": "dìdi",
+    "translate": {
+      "en": "younger brother",
+      "ru": "младший брат"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "东西",
+    "pinyin": "dōngxi",
+    "translate": {
+      "en": "thing, stuff",
+      "ru": "вещь, предмет"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "都",
+    "pinyin": "dōu",
+    "translate": {
+      "en": "all, both",
+      "ru": "все, всё, оба"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "读",
+    "pinyin": "dú",
+    "translate": {
+      "en": "to read aloud",
+      "ru": "читать вслух"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "对",
+    "pinyin": "duì",
+    "translate": {
+      "en": "correct, right",
+      "ru": "правильный, верный"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "对不起",
+    "pinyin": "duìbuqǐ",
+    "translate": {
+      "en": "sorry, excuse me",
+      "ru": "извините"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "多",
+    "pinyin": "duō",
+    "translate": {
+      "en": "many, much",
+      "ru": "много"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "多少",
+    "pinyin": "duōshao",
+    "translate": {
+      "en": "how many, how much",
+      "ru": "сколько"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "读书",
+    "pinyin": "dúshū",
+    "translate": {
+      "en": "to read, to study",
+      "ru": "читать, учиться"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "二",
+    "pinyin": "èr",
+    "translate": {
+      "en": "two",
+      "ru": "два"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "儿子",
+    "pinyin": "érzi",
+    "translate": {
+      "en": "son",
+      "ru": "сын"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "饭",
+    "pinyin": "fàn",
+    "translate": {
+      "en": "meal, cooked rice",
+      "ru": "еда, варёный рис"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "饭店",
+    "pinyin": "fàndiàn",
+    "translate": {
+      "en": "restaurant, hotel",
+      "ru": "ресторан, отель"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "房间",
+    "pinyin": "fángjiān",
+    "translate": {
+      "en": "room",
+      "ru": "комната"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "非常",
+    "pinyin": "fēicháng",
+    "translate": {
+      "en": "very, extremely",
+      "ru": "чрезвычайно, очень"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "飞机",
+    "pinyin": "fēijī",
+    "translate": {
+      "en": "airplane",
+      "ru": "самолёт"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "分",
+    "pinyin": "fēn",
+    "translate": {
+      "en": "minute, cent, point",
+      "ru": "минута, балл, цент"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "分钟",
+    "pinyin": "fēnzhōng",
+    "translate": {
+      "en": "minute (duration)",
+      "ru": "минута (продолжительность)"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "高兴",
+    "pinyin": "gāoxìng",
+    "translate": {
+      "en": "happy, glad",
+      "ru": "радостный"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "个",
+    "pinyin": "gè",
+    "translate": {
+      "en": "general measure word",
+      "ru": "универсальное счётное слово"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "歌",
+    "pinyin": "gē",
+    "translate": {
+      "en": "song",
+      "ru": "песня"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "哥哥",
+    "pinyin": "gēge",
+    "translate": {
+      "en": "older brother",
+      "ru": "старший брат"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "给",
+    "pinyin": "gěi",
+    "translate": {
+      "en": "to give, to, for",
+      "ru": "давать, для"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "公司",
+    "pinyin": "gōngsī",
+    "translate": {
+      "en": "company",
+      "ru": "компания, фирма"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "工作",
+    "pinyin": "gōngzuò",
+    "translate": {
+      "en": "to work, job",
+      "ru": "работать, работа"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "狗",
+    "pinyin": "gǒu",
+    "translate": {
+      "en": "dog",
+      "ru": "собака"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "贵",
+    "pinyin": "guì",
+    "translate": {
+      "en": "expensive",
+      "ru": "дорогой"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "国",
+    "pinyin": "guó",
+    "translate": {
+      "en": "country, nation",
+      "ru": "страна, государство"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "还",
+    "pinyin": "hái",
+    "translate": {
+      "en": "still, also, in addition",
+      "ru": "ещё, всё ещё, также"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "孩子",
+    "pinyin": "háizi",
+    "translate": {
+      "en": "child, kid",
+      "ru": "ребёнок"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "汉语",
+    "pinyin": "Hànyǔ",
+    "translate": {
+      "en": "Chinese language",
+      "ru": "китайский язык"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "汉字",
+    "pinyin": "Hànzì",
+    "translate": {
+      "en": "Chinese character",
+      "ru": "китайский иероглиф"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "号",
+    "pinyin": "hào",
+    "translate": {
+      "en": "date, number",
+      "ru": "число, номер"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "好",
+    "pinyin": "hǎo",
+    "translate": {
+      "en": "good, well",
+      "ru": "хороший, хорошо"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "好吃",
+    "pinyin": "hǎochī",
+    "translate": {
+      "en": "delicious (food)",
+      "ru": "вкусный"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "好看",
+    "pinyin": "hǎokàn",
+    "translate": {
+      "en": "good-looking",
+      "ru": "красивый, приятный на вид"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "好听",
+    "pinyin": "hǎotīng",
+    "translate": {
+      "en": "pleasant to hear",
+      "ru": "приятный на слух"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "好玩儿",
+    "pinyin": "hǎowánr",
+    "translate": {
+      "en": "fun, interesting",
+      "ru": "интересный, весёлый"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "和",
+    "pinyin": "hé",
+    "translate": {
+      "en": "and, with",
+      "ru": "и, с"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "喝",
+    "pinyin": "hē",
+    "translate": {
+      "en": "to drink",
+      "ru": "пить"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "很",
+    "pinyin": "hěn",
+    "translate": {
+      "en": "very",
+      "ru": "очень"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "后",
+    "pinyin": "hòu",
+    "translate": {
+      "en": "back, behind, after",
+      "ru": "сзади, за, после"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "回",
+    "pinyin": "huí",
+    "translate": {
+      "en": "to return, go back",
+      "ru": "возвращаться"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "会",
+    "pinyin": "huì",
+    "translate": {
+      "en": "can, know how to, will",
+      "ru": "уметь, мочь"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "火车",
+    "pinyin": "huǒchē",
+    "translate": {
+      "en": "train",
+      "ru": "поезд"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "几",
+    "pinyin": "jǐ",
+    "translate": {
+      "en": "how many (small counts), several",
+      "ru": "сколько (до 10), несколько"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "家",
+    "pinyin": "jiā",
+    "translate": {
+      "en": "home, family",
+      "ru": "дом, семья"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "见",
+    "pinyin": "jiàn",
+    "translate": {
+      "en": "to see, meet",
+      "ru": "видеть, встречаться"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "件",
+    "pinyin": "jiàn",
+    "translate": {
+      "en": "measure word for clothes/matters",
+      "ru": "счётное слово для одежды/дел"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "叫",
+    "pinyin": "jiào",
+    "translate": {
+      "en": "to call, be named",
+      "ru": "звать, называться"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "饺子",
+    "pinyin": "jiǎozi",
+    "translate": {
+      "en": "dumpling",
+      "ru": "пельмени"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "家人",
+    "pinyin": "jiārén",
+    "translate": {
+      "en": "family members",
+      "ru": "члены семьи"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "鸡蛋",
+    "pinyin": "jīdàn",
+    "translate": {
+      "en": "egg",
+      "ru": "яйцо"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "姐姐",
+    "pinyin": "jiějie",
+    "translate": {
+      "en": "older sister",
+      "ru": "старшая сестра"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "今年",
+    "pinyin": "jīnnián",
+    "translate": {
+      "en": "this year",
+      "ru": "в этом году"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "今天",
+    "pinyin": "jīntiān",
+    "translate": {
+      "en": "today",
+      "ru": "сегодня"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "九",
+    "pinyin": "jiǔ",
+    "translate": {
+      "en": "nine",
+      "ru": "девять"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "觉得",
+    "pinyin": "juéde",
+    "translate": {
+      "en": "to feel, think",
+      "ru": "чувствовать, думать"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "开",
+    "pinyin": "kāi",
+    "translate": {
+      "en": "to open, drive, turn on",
+      "ru": "открывать, водить, включать"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "开车",
+    "pinyin": "kāichē",
+    "translate": {
+      "en": "to drive a car",
+      "ru": "водить машину"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "看",
+    "pinyin": "kàn",
+    "translate": {
+      "en": "to look, watch, read",
+      "ru": "смотреть, читать"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "看病",
+    "pinyin": "kànbìng",
+    "translate": {
+      "en": "to see a doctor, treat a patient",
+      "ru": "идти к врачу, лечить"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "看见",
+    "pinyin": "kànjiàn",
+    "translate": {
+      "en": "to see, catch sight of",
+      "ru": "увидеть, заметить"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "课",
+    "pinyin": "kè",
+    "translate": {
+      "en": "lesson, class",
+      "ru": "урок, занятие"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "可以",
+    "pinyin": "kěyǐ",
+    "translate": {
+      "en": "can, may",
+      "ru": "можно, мочь"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "口",
+    "pinyin": "kǒu",
+    "translate": {
+      "en": "mouth, entrance",
+      "ru": "рот, вход"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "块",
+    "pinyin": "kuài",
+    "translate": {
+      "en": "piece, yuan (currency)",
+      "ru": "кусок, юань"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "来",
+    "pinyin": "lái",
+    "translate": {
+      "en": "to come",
+      "ru": "приходить, приезжать"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "老师",
+    "pinyin": "lǎoshī",
+    "translate": {
+      "en": "teacher",
+      "ru": "учитель, преподаватель"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "了",
+    "pinyin": "le",
+    "translate": {
+      "en": "completed action/change particle",
+      "ru": "глагольная частица завершённости / изменения состояния"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "冷",
+    "pinyin": "lěng",
+    "translate": {
+      "en": "cold",
+      "ru": "холодный"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "里",
+    "pinyin": "lǐ",
+    "translate": {
+      "en": "inside, in",
+      "ru": "внутри, в"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "两",
+    "pinyin": "liǎng",
+    "translate": {
+      "en": "two (for quantities)",
+      "ru": "два (с исчисляемыми)"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "零",
+    "pinyin": "líng",
+    "translate": {
+      "en": "zero",
+      "ru": "ноль"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "六",
+    "pinyin": "liù",
+    "translate": {
+      "en": "six",
+      "ru": "шесть"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "吗",
+    "pinyin": "ma",
+    "translate": {
+      "en": "question particle",
+      "ru": "вопросительная частица"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "卖",
+    "pinyin": "mài",
+    "translate": {
+      "en": "to sell",
+      "ru": "продавать"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "买",
+    "pinyin": "mǎi",
+    "translate": {
+      "en": "to buy",
+      "ru": "покупать"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "妈妈",
+    "pinyin": "māma",
+    "translate": {
+      "en": "mom, mother",
+      "ru": "мама"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "忙",
+    "pinyin": "máng",
+    "translate": {
+      "en": "busy",
+      "ru": "занятой"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "猫",
+    "pinyin": "māo",
+    "translate": {
+      "en": "cat",
+      "ru": "кошка"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "没关系",
+    "pinyin": "méi guānxi",
+    "translate": {
+      "en": "it doesn't matter",
+      "ru": "ничего страшного"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "妹妹",
+    "pinyin": "mèimei",
+    "translate": {
+      "en": "younger sister",
+      "ru": "младшая сестра"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "没事",
+    "pinyin": "méishì",
+    "translate": {
+      "en": "it's nothing, no problem",
+      "ru": "ничего, всё в порядке"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "没有",
+    "pinyin": "méiyǒu",
+    "translate": {
+      "en": "not have, there is not",
+      "ru": "не иметь, нет"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "们",
+    "pinyin": "men",
+    "translate": {
+      "en": "plural suffix for people",
+      "ru": "суффикс множественного числа"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "面包",
+    "pinyin": "miànbāo",
+    "translate": {
+      "en": "bread",
+      "ru": "хлеб"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "面条儿",
+    "pinyin": "miàntiáor",
+    "translate": {
+      "en": "noodles",
+      "ru": "лапша"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "米饭",
+    "pinyin": "mǐfàn",
+    "translate": {
+      "en": "cooked rice",
+      "ru": "варёный рис"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "明年",
+    "pinyin": "míngnián",
+    "translate": {
+      "en": "next year",
+      "ru": "в следующем году"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "明天",
+    "pinyin": "míngtiān",
+    "translate": {
+      "en": "tomorrow",
+      "ru": "завтра"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "名字",
+    "pinyin": "míngzi",
+    "translate": {
+      "en": "name",
+      "ru": "имя"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "那",
+    "pinyin": "nà",
+    "translate": {
+      "en": "that",
+      "ru": "то, тот"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "哪",
+    "pinyin": "nǎ",
+    "translate": {
+      "en": "which",
+      "ru": "какой, который"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "那边",
+    "pinyin": "nàbiān",
+    "translate": {
+      "en": "over there, that side",
+      "ru": "там, та сторона"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "那个",
+    "pinyin": "nàge",
+    "translate": {
+      "en": "that one",
+      "ru": "тот, та, то"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "哪个",
+    "pinyin": "nǎge",
+    "translate": {
+      "en": "which one",
+      "ru": "какой, который из"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "那里",
+    "pinyin": "nàlǐ",
+    "translate": {
+      "en": "there",
+      "ru": "там"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "哪里",
+    "pinyin": "nǎlǐ",
+    "translate": {
+      "en": "where",
+      "ru": "где, куда"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "男",
+    "pinyin": "nán",
+    "translate": {
+      "en": "male",
+      "ru": "мужчина, мужской"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "男朋友",
+    "pinyin": "nánpéngyou",
+    "translate": {
+      "en": "boyfriend",
+      "ru": "парень, молодой человек"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "那儿",
+    "pinyin": "nàr",
+    "translate": {
+      "en": "there",
+      "ru": "там"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "哪儿",
+    "pinyin": "nǎr",
+    "translate": {
+      "en": "where",
+      "ru": "где, куда"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "那些",
+    "pinyin": "nàxiē",
+    "translate": {
+      "en": "those",
+      "ru": "те"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "哪些",
+    "pinyin": "nǎxiē",
+    "translate": {
+      "en": "which ones",
+      "ru": "какие, которые"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "呢",
+    "pinyin": "ne",
+    "translate": {
+      "en": "modal particle (what about...?)",
+      "ru": "вопросительная/модальная частица"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "能",
+    "pinyin": "néng",
+    "translate": {
+      "en": "can, be able to",
+      "ru": "мочь, быть в состоянии"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "你",
+    "pinyin": "nǐ",
+    "translate": {
+      "en": "you",
+      "ru": "ты"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "你好",
+    "pinyin": "nǐ hǎo",
+    "translate": {
+      "en": "hello",
+      "ru": "привет, здравствуйте"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "年",
+    "pinyin": "nián",
+    "translate": {
+      "en": "year",
+      "ru": "год"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "你们",
+    "pinyin": "nǐmen",
+    "translate": {
+      "en": "you (plural)",
+      "ru": "вы"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "您",
+    "pinyin": "nín",
+    "translate": {
+      "en": "you (polite)",
+      "ru": "Вы (уважительно)"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "牛奶",
+    "pinyin": "niúnǎi",
+    "translate": {
+      "en": "milk",
+      "ru": "молоко"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "女",
+    "pinyin": "nǚ",
+    "translate": {
+      "en": "female",
+      "ru": "женщина, женский"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "女儿",
+    "pinyin": "nǚ'ér",
+    "translate": {
+      "en": "daughter",
+      "ru": "дочь"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "女朋友",
+    "pinyin": "nǚpéngyou",
+    "translate": {
+      "en": "girlfriend",
+      "ru": "девушка (подруга)"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "女士",
+    "pinyin": "nǚshì",
+    "translate": {
+      "en": "lady, Ms.",
+      "ru": "госпожа, дама"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "朋友",
+    "pinyin": "péngyou",
+    "translate": {
+      "en": "friend",
+      "ru": "друг"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "便宜",
+    "pinyin": "piányi",
+    "translate": {
+      "en": "cheap",
+      "ru": "дешёвый"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "漂亮",
+    "pinyin": "piàoliang",
+    "translate": {
+      "en": "pretty, beautiful",
+      "ru": "красивый"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "苹果",
+    "pinyin": "píngguǒ",
+    "translate": {
+      "en": "apple",
+      "ru": "яблоко"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "七",
+    "pinyin": "qī",
+    "translate": {
+      "en": "seven",
+      "ru": "семь"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "前",
+    "pinyin": "qián",
+    "translate": {
+      "en": "front, ahead, before",
+      "ru": "впереди, перед, до"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "钱",
+    "pinyin": "qián",
+    "translate": {
+      "en": "money",
+      "ru": "деньги"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "千",
+    "pinyin": "qiān",
+    "translate": {
+      "en": "thousand",
+      "ru": "тысяча"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "起床",
+    "pinyin": "qǐchuáng",
+    "translate": {
+      "en": "to get up (from bed)",
+      "ru": "вставать с кровати"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "请",
+    "pinyin": "qǐng",
+    "translate": {
+      "en": "please, to invite",
+      "ru": "просить, приглашать, пожалуйста"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "请问",
+    "pinyin": "qǐngwèn",
+    "translate": {
+      "en": "excuse me, may I ask",
+      "ru": "позвольте спросить"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "去",
+    "pinyin": "qù",
+    "translate": {
+      "en": "to go",
+      "ru": "идти, ехать"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "去年",
+    "pinyin": "qùnián",
+    "translate": {
+      "en": "last year",
+      "ru": "в прошлом году"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "热",
+    "pinyin": "rè",
+    "translate": {
+      "en": "hot",
+      "ru": "горячий, жаркий"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "人",
+    "pinyin": "rén",
+    "translate": {
+      "en": "person, people",
+      "ru": "человек, люди"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "认识",
+    "pinyin": "rènshi",
+    "translate": {
+      "en": "to know, recognize",
+      "ru": "знать, быть знакомым"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "日",
+    "pinyin": "rì",
+    "translate": {
+      "en": "day, sun, date",
+      "ru": "день, солнце, число"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "三",
+    "pinyin": "sān",
+    "translate": {
+      "en": "three",
+      "ru": "три"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "上",
+    "pinyin": "shàng",
+    "translate": {
+      "en": "above, up, on, go up",
+      "ru": "на, вверху, подниматься"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "上班",
+    "pinyin": "shàngbān",
+    "translate": {
+      "en": "to go to work",
+      "ru": "идти на работу"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "商店",
+    "pinyin": "shāngdiàn",
+    "translate": {
+      "en": "shop, store",
+      "ru": "магазин"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "上课",
+    "pinyin": "shàngkè",
+    "translate": {
+      "en": "to attend/teach a class",
+      "ru": "идти на урок, вести урок"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "上午",
+    "pinyin": "shàngwǔ",
+    "translate": {
+      "en": "morning (late)",
+      "ru": "до полудня"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "上学",
+    "pinyin": "shàngxué",
+    "translate": {
+      "en": "to go to school",
+      "ru": "ходить в школу, учиться"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "少",
+    "pinyin": "shǎo",
+    "translate": {
+      "en": "few, little",
+      "ru": "мало"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "谁",
+    "pinyin": "shéi",
+    "translate": {
+      "en": "who, whom",
+      "ru": "кто, кого"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "生病",
+    "pinyin": "shēngbìng",
+    "translate": {
+      "en": "to fall ill",
+      "ru": "заболеть"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "什么",
+    "pinyin": "shénme",
+    "translate": {
+      "en": "what",
+      "ru": "что, какой"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "十",
+    "pinyin": "shí",
+    "translate": {
+      "en": "ten",
+      "ru": "десять"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "事",
+    "pinyin": "shì",
+    "translate": {
+      "en": "matter, thing, affair",
+      "ru": "дело, событие"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "是",
+    "pinyin": "shì",
+    "translate": {
+      "en": "to be",
+      "ru": "быть, являться"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "时候",
+    "pinyin": "shíhou",
+    "translate": {
+      "en": "time, moment",
+      "ru": "время, момент"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "时间",
+    "pinyin": "shíjiān",
+    "translate": {
+      "en": "time",
+      "ru": "время"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "手机",
+    "pinyin": "shǒujī",
+    "translate": {
+      "en": "mobile phone",
+      "ru": "мобильный телефон"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "书",
+    "pinyin": "shū",
+    "translate": {
+      "en": "book",
+      "ru": "книга"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "书店",
+    "pinyin": "shūdiàn",
+    "translate": {
+      "en": "bookstore",
+      "ru": "книжный магазин"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "睡",
+    "pinyin": "shuì",
+    "translate": {
+      "en": "to sleep",
+      "ru": "спать"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "水",
+    "pinyin": "shuǐ",
+    "translate": {
+      "en": "water",
+      "ru": "вода"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "水果",
+    "pinyin": "shuǐguǒ",
+    "translate": {
+      "en": "fruit",
+      "ru": "фрукты"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "睡觉",
+    "pinyin": "shuìjiào",
+    "translate": {
+      "en": "to sleep",
+      "ru": "спать"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "说",
+    "pinyin": "shuō",
+    "translate": {
+      "en": "to speak, say",
+      "ru": "говорить, сказать"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "说话",
+    "pinyin": "shuōhuà",
+    "translate": {
+      "en": "to speak, talk",
+      "ru": "говорить, разговаривать"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "四",
+    "pinyin": "sì",
+    "translate": {
+      "en": "four",
+      "ru": "четыре"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "岁",
+    "pinyin": "suì",
+    "translate": {
+      "en": "years old",
+      "ru": "лет (о возрасте)"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "他",
+    "pinyin": "tā",
+    "translate": {
+      "en": "he, him",
+      "ru": "он"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "它",
+    "pinyin": "tā",
+    "translate": {
+      "en": "it",
+      "ru": "оно"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "她",
+    "pinyin": "tā",
+    "translate": {
+      "en": "she, her",
+      "ru": "она"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "太",
+    "pinyin": "tài",
+    "translate": {
+      "en": "too, extremely",
+      "ru": "слишком, чересчур"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "他们",
+    "pinyin": "tāmen",
+    "translate": {
+      "en": "they (masculine/mixed)",
+      "ru": "они (мужчины/смешанная группа)"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "它们",
+    "pinyin": "tāmen",
+    "translate": {
+      "en": "they (things, animals)",
+      "ru": "они (о предметах, животных)"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "她们",
+    "pinyin": "tāmen",
+    "translate": {
+      "en": "they (feminine)",
+      "ru": "они (женщины)"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "天",
+    "pinyin": "tiān",
+    "translate": {
+      "en": "sky, day, weather",
+      "ru": "небо, день, погода"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "天气",
+    "pinyin": "tiānqì",
+    "translate": {
+      "en": "weather",
+      "ru": "погода"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "听",
+    "pinyin": "tīng",
+    "translate": {
+      "en": "to listen, hear",
+      "ru": "слушать, слышать"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "听见",
+    "pinyin": "tīngjiàn",
+    "translate": {
+      "en": "to hear",
+      "ru": "услышать"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "同学",
+    "pinyin": "tóngxué",
+    "translate": {
+      "en": "classmate, schoolmate",
+      "ru": "одноклассник, однокурсник"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "外",
+    "pinyin": "wài",
+    "translate": {
+      "en": "outside",
+      "ru": "снаружи, вне"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "外边",
+    "pinyin": "wàibian",
+    "translate": {
+      "en": "outside",
+      "ru": "снаружи, на улице"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "玩",
+    "pinyin": "wán",
+    "translate": {
+      "en": "to play, have fun",
+      "ru": "играть, развлекаться"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "晚",
+    "pinyin": "wǎn",
+    "translate": {
+      "en": "late, evening",
+      "ru": "поздний, вечер"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "晚饭",
+    "pinyin": "wǎnfàn",
+    "translate": {
+      "en": "dinner, supper",
+      "ru": "ужин"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "晚上",
+    "pinyin": "wǎnshang",
+    "translate": {
+      "en": "evening, night",
+      "ru": "вечер, ночь"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "喂",
+    "pinyin": "wèi",
+    "translate": {
+      "en": "hello (on the phone), hey",
+      "ru": "алло, эй"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "问",
+    "pinyin": "wèn",
+    "translate": {
+      "en": "to ask",
+      "ru": "спрашивать"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "问题",
+    "pinyin": "wèntí",
+    "translate": {
+      "en": "question, problem",
+      "ru": "вопрос, проблема"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "我",
+    "pinyin": "wǒ",
+    "translate": {
+      "en": "I, me",
+      "ru": "я"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "我们",
+    "pinyin": "wǒmen",
+    "translate": {
+      "en": "we, us",
+      "ru": "мы"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "五",
+    "pinyin": "wǔ",
+    "translate": {
+      "en": "five",
+      "ru": "пять"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "午饭",
+    "pinyin": "wǔfàn",
+    "translate": {
+      "en": "lunch",
+      "ru": "обед"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "下",
+    "pinyin": "xià",
+    "translate": {
+      "en": "under, below, down, next",
+      "ru": "под, внизу, следующий"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "下雨",
+    "pinyin": "xiàyǔ",
+    "translate": {
+      "en": "to rain",
+      "ru": "идёт дождь"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "下班",
+    "pinyin": "xiàbān",
+    "translate": {
+      "en": "to finish work",
+      "ru": "заканчивать работу"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "下课",
+    "pinyin": "xiàkè",
+    "translate": {
+      "en": "to finish class",
+      "ru": "заканчивать урок"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "想",
+    "pinyin": "xiǎng",
+    "translate": {
+      "en": "to want, think, miss",
+      "ru": "хотеть, думать, скучать"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "先生",
+    "pinyin": "xiānsheng",
+    "translate": {
+      "en": "Mr., gentleman, husband",
+      "ru": "господин, мистер, муж"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "现在",
+    "pinyin": "xiànzài",
+    "translate": {
+      "en": "now",
+      "ru": "сейчас"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "小",
+    "pinyin": "xiǎo",
+    "translate": {
+      "en": "small, little",
+      "ru": "маленький"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "小朋友",
+    "pinyin": "xiǎopéngyǒu",
+    "translate": {
+      "en": "child, little friend",
+      "ru": "ребёнок, малыш"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "小时",
+    "pinyin": "xiǎoshí",
+    "translate": {
+      "en": "hour",
+      "ru": "час (продолжительность)"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "小学",
+    "pinyin": "xiǎoxué",
+    "translate": {
+      "en": "primary school",
+      "ru": "начальная школа"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "小学生",
+    "pinyin": "xiǎoxuéshēng",
+    "translate": {
+      "en": "primary school pupil",
+      "ru": "ученик начальной школы"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "下午",
+    "pinyin": "xiàwǔ",
+    "translate": {
+      "en": "afternoon",
+      "ru": "после полудня"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "写",
+    "pinyin": "xiě",
+    "translate": {
+      "en": "to write",
+      "ru": "писать"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "些",
+    "pinyin": "xiē",
+    "translate": {
+      "en": "some, a few",
+      "ru": "несколько"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "谢谢",
+    "pinyin": "xièxie",
+    "translate": {
+      "en": "to thank, thanks",
+      "ru": "спасибо, благодарить"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "喜欢",
+    "pinyin": "xǐhuan",
+    "translate": {
+      "en": "to like",
+      "ru": "нравиться"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "新",
+    "pinyin": "xīn",
+    "translate": {
+      "en": "new",
+      "ru": "новый"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "星期",
+    "pinyin": "xīngqī",
+    "translate": {
+      "en": "week",
+      "ru": "неделя"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "星期日",
+    "pinyin": "xīngqīrì",
+    "translate": {
+      "en": "Sunday",
+      "ru": "воскресенье"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "星期天",
+    "pinyin": "xīngqītiān",
+    "translate": {
+      "en": "Sunday",
+      "ru": "воскресенье"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "休息",
+    "pinyin": "xiūxi",
+    "translate": {
+      "en": "to rest, take a break",
+      "ru": "отдыхать"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "学",
+    "pinyin": "xué",
+    "translate": {
+      "en": "to study, learn",
+      "ru": "учиться"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "雪",
+    "pinyin": "xuě",
+    "translate": {
+      "en": "snow",
+      "ru": "снег"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "学生",
+    "pinyin": "xuéshēng",
+    "translate": {
+      "en": "student, pupil",
+      "ru": "ученик, студент"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "学习",
+    "pinyin": "xuéxí",
+    "translate": {
+      "en": "to study, learn",
+      "ru": "учиться, изучать"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "学校",
+    "pinyin": "xuéxiào",
+    "translate": {
+      "en": "school",
+      "ru": "школа"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "要",
+    "pinyin": "yào",
+    "translate": {
+      "en": "to want, need, will",
+      "ru": "хотеть, нужно, собираться"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "也",
+    "pinyin": "yě",
+    "translate": {
+      "en": "also, too",
+      "ru": "тоже, также"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "一",
+    "pinyin": "yī",
+    "translate": {
+      "en": "one",
+      "ru": "один"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "一半",
+    "pinyin": "yíbàn",
+    "translate": {
+      "en": "half",
+      "ru": "половина"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "一点儿",
+    "pinyin": "yìdiǎnr",
+    "translate": {
+      "en": "a little, a bit",
+      "ru": "немного, чуть-чуть"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "衣服",
+    "pinyin": "yīfu",
+    "translate": {
+      "en": "clothes",
+      "ru": "одежда"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "医生",
+    "pinyin": "yīshēng",
+    "translate": {
+      "en": "doctor",
+      "ru": "врач"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "一下",
+    "pinyin": "yíxià",
+    "translate": {
+      "en": "(verb) a bit, once",
+      "ru": "разок, немного (после глагола)"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "一些",
+    "pinyin": "yìxiē",
+    "translate": {
+      "en": "some, a few",
+      "ru": "несколько, некоторые"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "医院",
+    "pinyin": "yīyuàn",
+    "translate": {
+      "en": "hospital",
+      "ru": "больница"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "椅子",
+    "pinyin": "yǐzi",
+    "translate": {
+      "en": "chair",
+      "ru": "стул"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "有",
+    "pinyin": "yǒu",
+    "translate": {
+      "en": "to have, there is",
+      "ru": "иметь, есть"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "有的",
+    "pinyin": "yǒude",
+    "translate": {
+      "en": "some (of them)",
+      "ru": "некоторые"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "有些",
+    "pinyin": "yǒuxiē",
+    "translate": {
+      "en": "some, somewhat",
+      "ru": "некоторые, несколько"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "有点儿",
+    "pinyin": "yǒudiǎnr",
+    "translate": {
+      "en": "a bit (usually negative)",
+      "ru": "немного, чуть-чуть (с оттенком недовольства)"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "雨",
+    "pinyin": "yǔ",
+    "translate": {
+      "en": "rain",
+      "ru": "дождь"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "元",
+    "pinyin": "yuán",
+    "translate": {
+      "en": "yuan (currency unit)",
+      "ru": "юань"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "月",
+    "pinyin": "yuè",
+    "translate": {
+      "en": "month, moon",
+      "ru": "месяц, луна"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "再",
+    "pinyin": "zài",
+    "translate": {
+      "en": "again, once more",
+      "ru": "снова, ещё раз"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "在",
+    "pinyin": "zài",
+    "translate": {
+      "en": "at, in, to be at, (progressive)",
+      "ru": "в, на, находиться"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "再见",
+    "pinyin": "zàijiàn",
+    "translate": {
+      "en": "goodbye",
+      "ru": "до свидания"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "早",
+    "pinyin": "zǎo",
+    "translate": {
+      "en": "early, morning greeting",
+      "ru": "ранний, доброе утро"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "早饭",
+    "pinyin": "zǎofàn",
+    "translate": {
+      "en": "breakfast",
+      "ru": "завтрак"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "早上",
+    "pinyin": "zǎoshang",
+    "translate": {
+      "en": "morning (early)",
+      "ru": "утро (раннее)"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "怎么",
+    "pinyin": "zěnme",
+    "translate": {
+      "en": "how, why",
+      "ru": "как, каким образом"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "怎么样",
+    "pinyin": "zěnmeyàng",
+    "translate": {
+      "en": "how about, how is it",
+      "ru": "как, каков"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "找",
+    "pinyin": "zhǎo",
+    "translate": {
+      "en": "to look for, seek",
+      "ru": "искать"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "这",
+    "pinyin": "zhè",
+    "translate": {
+      "en": "this",
+      "ru": "это, этот"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "这边",
+    "pinyin": "zhèbiān",
+    "translate": {
+      "en": "here, this side",
+      "ru": "здесь, эта сторона"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "这个",
+    "pinyin": "zhège",
+    "translate": {
+      "en": "this one",
+      "ru": "этот, эта, это"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "这里",
+    "pinyin": "zhèlǐ",
+    "translate": {
+      "en": "here",
+      "ru": "здесь"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "真",
+    "pinyin": "zhēn",
+    "translate": {
+      "en": "real, true, really",
+      "ru": "настоящий, действительно"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "正在",
+    "pinyin": "zhèngzài",
+    "translate": {
+      "en": "in the process of (doing)",
+      "ru": "как раз (делает), в процессе"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "这儿",
+    "pinyin": "zhèr",
+    "translate": {
+      "en": "here",
+      "ru": "здесь"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "这些",
+    "pinyin": "zhèxiē",
+    "translate": {
+      "en": "these",
+      "ru": "эти"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "只",
+    "pinyin": "zhī",
+    "translate": {
+      "en": "measure word for animals/one of a pair",
+      "ru": "счётное слово для животных"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "知道",
+    "pinyin": "zhīdào",
+    "translate": {
+      "en": "to know, be aware",
+      "ru": "знать"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "中国",
+    "pinyin": "Zhōngguó",
+    "translate": {
+      "en": "China",
+      "ru": "Китай"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "中文",
+    "pinyin": "Zhōngwén",
+    "translate": {
+      "en": "Chinese language",
+      "ru": "китайский язык"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "中午",
+    "pinyin": "zhōngwǔ",
+    "translate": {
+      "en": "noon, midday",
+      "ru": "полдень"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "中学",
+    "pinyin": "zhōngxué",
+    "translate": {
+      "en": "middle school",
+      "ru": "средняя школа"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "中学生",
+    "pinyin": "zhōngxuéshēng",
+    "translate": {
+      "en": "middle school student",
+      "ru": "ученик средней школы"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "住",
+    "pinyin": "zhù",
+    "translate": {
+      "en": "to live, stay",
+      "ru": "жить, проживать"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "桌子",
+    "pinyin": "zhuōzi",
+    "translate": {
+      "en": "table, desk",
+      "ru": "стол"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "字",
+    "pinyin": "zì",
+    "translate": {
+      "en": "character, word",
+      "ru": "иероглиф, знак"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "坐",
+    "pinyin": "zuò",
+    "translate": {
+      "en": "to sit, take (transport)",
+      "ru": "сидеть, ехать на"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "做",
+    "pinyin": "zuò",
+    "translate": {
+      "en": "to do, make",
+      "ru": "делать, производить"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "做饭",
+    "pinyin": "zuòfàn",
+    "translate": {
+      "en": "to cook",
+      "ru": "готовить еду"
+    },
+    "hsk_level": 1
+  },
+  {
+    "character": "昨天",
+    "pinyin": "zuótiān",
+    "translate": {
+      "en": "yesterday",
+      "ru": "вчера"
+    },
+    "hsk_level": 1
+  }
+]
