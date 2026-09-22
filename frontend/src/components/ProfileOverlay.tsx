@@ -18,20 +18,18 @@ function ProfileOverlay({ onClose }: ProfileOverlayProps) {
         className="profile-modal"
         onClick={(event) => event.stopPropagation()}
       >
-        <button className="profile-close" onClick={onClose}>
-          ×
-        </button>
-
         <div className="profile-header">
-          <div className="profile-photo">
-            <span>+</span>
-          </div>
-
           <div className="profile-info">
             <h3 className="profile-info-username">@{user.username}</h3>
-
-            <p className="profile-about">Nothing here yet.</p>
           </div>
+
+          <button
+            className="profile-close"
+            onClick={onClose}
+            aria-label="Close profile"
+          >
+            ×
+          </button>
         </div>
 
         <button

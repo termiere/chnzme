@@ -41,6 +41,46 @@ const en = {
     startDescription:
       "Choose Words or Grammar from the sidebar and start learning.",
   },
+
+  words: {
+    title: "Words",
+    search: "Search",
+    add: "Add",
+    remove: "Remove",
+    added: "Added",
+    hsk: "HSK",
+    noWords: "No words found",
+    saving: "Saving...",
+    inDictionary: "In dictionary",
+
+    study: "Study",
+    review: "Review",
+    repeatWords: "Repeat words",
+    dictionary: "Dictionary",
+    allWords: "All words",
+
+    hskDescriptions: {
+      1: "Beginner vocabulary",
+      2: "Elementary vocabulary",
+      3: "Intermediate vocabulary",
+    },
+
+    back: "Back",
+    loading: "Loading words...",
+    errorLoading: "Loading error",
+    addError: "Failed to add the word to the dictionary. Please try again.",
+  },
+  dictionary: {
+    title: "Dictionary",
+    search: "Search",
+    empty: "Your dictionary is empty. Add words from the HSK section!",
+    remove: "Remove",
+    noWords: "No words found",
+    back: "Back",
+    loading: "Loading your dictionary...",
+    deleteError: "Failed to remove the word. Please try again.",
+    errorLoading: "Failed to load dictionary",
+  },
 };
 
 export default en;

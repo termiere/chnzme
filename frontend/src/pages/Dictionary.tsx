@@ -3,12 +3,20 @@ import { useEffect, useState } from "react";
 import { ChevronLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 
+import ru from "../locales/ru";
+import en from "../locales/en";
+
 import WordItem from "../components/WordItem";
 import { type UserWord, getUserWords, deleteUserWord } from "../api/userWords";
 
 import "../styles/Words.css";
 
-function Dictionary() {
+type DictionaryProps = {
+  language: string;
+};
+
+function Dictionary({ language }: DictionaryProps) {
+  const text = language === "ru" ? ru.dictionary : en.dictionary;
   const [userWords, setUserWords] = useState<UserWord[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -17,12 +25,12 @@ function Dictionary() {
     let isMounted = true;
     setLoading(true);
 
-    getUserWords()
+    getUserWords(language)
       .then((data) => {
         if (isMounted) setUserWords(data);
       })
       .catch((err) => {
-        if (isMounted) setError(err.message || "Ошибка загрузки словаря");
+        if (isMounted) setError(err.message || text.errorLoading);
       })
       .finally(() => {
         if (isMounted) setLoading(false);
@@ -31,7 +39,7 @@ function Dictionary() {
     return () => {
       isMounted = false;
     };
-  }, []);
+  }, [language]);
 
   const handleDelete = async (wordId: number) => {
     const previousWords = [...userWords];
@@ -43,12 +51,12 @@ function Dictionary() {
       await deleteUserWord(wordId);
     } catch (err) {
       console.error(err);
-      alert("Не удалось удалить слово. Попробуйте снова.");
+      alert(text.deleteError);
       setUserWords(previousWords);
     }
   };
 
-  if (loading) return <div>Загрузка вашего словаря...</div>;
+  if (loading) return <div>{text.loading}</div>;
   if (error) return <div className="error-message">{error}</div>;
 
   return (
@@ -57,11 +65,11 @@ function Dictionary() {
 
       <Link to="/words" className="back-to-levels-card">
         <ChevronLeft />
-        <span>back</span>
+        <span>{text.back}</span>
       </Link>
 
       {userWords.length === 0 ? (
-        <p>Ваш словарь пуст. Добавьте слова в разделе HSK!</p>
+        <p>{text.empty}</p>
       ) : (
         <div className="dictionary-list">
           {userWords.map((userWord) => (

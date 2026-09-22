@@ -3,6 +3,9 @@ import { useEffect, useState } from "react";
 import { ChevronLeft } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 
+import ru from "../locales/ru";
+import en from "../locales/en";
+
 import { useWords } from "../hooks/useWords";
 import { addUserWord, getUserWords } from "../api/userWords";
 import { WordList } from "../components/WordList";
@@ -10,18 +13,30 @@ import AuthModal from "../components/AuthModal";
 import { useAuth } from "../context/AuthContext";
 
 const HSK_LEVELS = [
-  { level: 1, title: "#hsk1", description: "beginner vocabulary" },
-  { level: 2, title: "#hsk2", description: "elementary vocabulary" },
-  { level: 3, title: "#hsk3", description: "intermediate vocabulary" },
+  { level: 1, title: "#hsk1" },
+  { level: 2, title: "#hsk2" },
+  { level: 3, title: "#hsk3" },
 ];
 
-function Words() {
+type WordsProps = {
+  language: string;
+};
+
+function Words({ language }: WordsProps) {
+  const text = language === "ru" ? ru.words : en.words;
+
   const { user } = useAuth();
   const { level } = useParams();
+
   const selectedHsk = level ? Number(level) : null;
   const [userWordIds, setUserWordIds] = useState<Set<number>>(new Set());
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
-  const { data: words, isLoading, isError, error } = useWords(selectedHsk);
+  const {
+    data: words,
+    isLoading,
+    isError,
+    error,
+  } = useWords(selectedHsk, language);
 
   useEffect(() => {
     if (!user) {
@@ -29,20 +44,20 @@ function Words() {
       return;
     }
 
-    getUserWords()
+    getUserWords(language)
       .then((userWords) => {
         setUserWordIds(new Set(userWords.map((item) => item.word.id)));
       })
       .catch((error) => {
-        console.error("Ошибка загрузки словаря:", error);
+        console.error(text.errorLoading, error);
       });
-  }, [user]);
+  }, [user, language]);
 
   const handleAddWord = async (wordId: number) => {
     try {
-      await addUserWord(wordId);
+      await addUserWord(wordId, language);
     } catch (err) {
-      console.error(`Failed to add word ${wordId}:`, err);
+      console.error(`${text.addError} ${wordId}:`, err);
       throw err;
     }
   };
@@ -56,13 +71,13 @@ function Words() {
 
         <div className="words-list">
           <Link to="/review" className="words-block">
-            <span className="words-block-title">review</span>
-            <span className="words-block-description">repeat words</span>
+            <span className="words-block-title">{text.review}</span>
+            <span className="words-block-description">{text.repeatWords}</span>
           </Link>
 
           <Link to="/dictionary" className="words-block">
-            <span className="words-block-title">dictionary</span>
-            <span className="words-block-description">all words</span>
+            <span className="words-block-title">{text.dictionary}</span>
+            <span className="words-block-description">{text.allWords}</span>
           </Link>
         </div>
       </section>
@@ -72,32 +87,34 @@ function Words() {
           <>
             <h2>##hsk</h2>
             <div className="words-list">
-              {HSK_LEVELS.map(({ level, title, description }) => (
+              {HSK_LEVELS.map(({ level, title }) => (
                 <Link
                   key={level}
                   to={`/words/hsk/${level}`}
                   className="words-block"
                 >
                   <span className="words-block-title">{title}</span>
-                  <span className="words-block-description">{description}</span>
+                  <span className="words-block-description">
+                    {text.hskDescriptions[level as 1 | 2 | 3]}
+                  </span>
                 </Link>
               ))}
             </div>
           </>
         ) : (
           <div className="hsk-content">
-            <h1>#vocabulary for hsk{selectedHsk}</h1>
+            <h1>#hsk{selectedHsk}</h1>
 
             <Link to="/words" className="back-to-levels-card">
               <ChevronLeft />
-              <span>back</span>
+              <span>{text.back}</span>
             </Link>
 
-            {isLoading && <div className="words-loading">Loading words...</div>}
+            {isLoading && <div className="words-loading">{text.loading}</div>}
 
             {isError && (
               <div className="error-message">
-                <strong>Ошибка загрузки:</strong> {error?.message}
+                <strong>{text.errorLoading}</strong> {error?.message}
               </div>
             )}
 
@@ -108,6 +125,7 @@ function Words() {
                 isAuthenticated={!!user}
                 onAddWord={handleAddWord}
                 onLoginRequired={() => setIsAuthModalOpen(true)}
+                language={language}
               />
             )}
           </div>

@@ -28,9 +28,15 @@ function App() {
           <Routes>
             <Route path="/" element={<Readme language={language} />} />
             <Route path="/readme" element={<Readme language={language} />} />
-            <Route path="/words" element={<Words />} />
-            <Route path="/words/hsk/:level" element={<Words />} />
-            <Route path="/dictionary" element={<Dictionary />} />
+            <Route path="/words" element={<Words language={language} />} />
+            <Route
+              path="/words/hsk/:level"
+              element={<Words language={language} />}
+            />
+            <Route
+              path="/dictionary"
+              element={<Dictionary language={language} />}
+            />
           </Routes>
         </main>
 

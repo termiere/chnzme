@@ -1,4 +1,8 @@
 import { useState } from "react";
+
+import ru from "../locales/ru";
+import en from "../locales/en";
+
 import type { Word } from "../api/words";
 import "../styles/Words.css";
 
@@ -8,6 +12,7 @@ interface WordListProps {
   isAuthenticated: boolean;
   onAddWord: (wordId: number) => Promise<void>;
   onLoginRequired: () => void;
+  language: string;
 }
 
 export function WordList({
@@ -16,7 +21,10 @@ export function WordList({
   isAuthenticated,
   onAddWord,
   onLoginRequired,
+  language,
 }: WordListProps) {
+  const text = language === "ru" ? ru.words : en.words;
+
   const [addedWordIds, setAddedWordIds] = useState<Set<number>>(new Set());
   const [pendingWordId, setPendingWordId] = useState<number | null>(null);
 
@@ -32,7 +40,7 @@ export function WordList({
     try {
       await onAddWord(wordId);
     } catch (error) {
-      console.error(`Ошибка при добавлении слова ${wordId}:`, error);
+      console.error(`${text.addError} ${wordId}:`, error);
 
       setAddedWordIds((prev) => {
         const next = new Set(prev);
@@ -40,14 +48,14 @@ export function WordList({
         return next;
       });
 
-      alert("Не удалось добавить слово в словарь. Попробуйте еще раз.");
+      alert(text.addError);
     } finally {
       setPendingWordId(null);
     }
   };
 
   if (words.length === 0) {
-    return <p className="words-empty">Слова для этого уровня не найдены.</p>;
+    return <p className="words-empty">{text.noWords}</p>;
   }
 
   return (
@@ -67,10 +75,10 @@ export function WordList({
                 onClick={() => handleAddClick(item.id)}
               >
                 {isPending
-                  ? "Сохранение..."
+                  ? text.saving
                   : isAdded
-                    ? "В словаре"
-                    : "+ Добавить"}
+                    ? text.inDictionary
+                    : `+ ${text.add}`}
               </button>
             </div>
 
