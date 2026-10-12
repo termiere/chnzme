@@ -1,10 +1,11 @@
-from datetime import datetime, timedelta
+from datetime import datetime
 
 from fastapi import HTTPException
 from sqlalchemy.orm import Session
 
 from app.repositories import user_words as user_words_repository
 from app.repositories import words as words_repository
+from app.services.srs.scheduler import preview_intervals, schedule_card
 
 
 def get_user_words(session: Session, user_id: int):
@@ -14,95 +15,65 @@ def get_user_words(session: Session, user_id: int):
 def add_word(session: Session, user_id: int, word_id: int):
     word = words_repository.find_word_by_id(session, word_id)
     if word is None:
-        raise HTTPException(status_code=404, detail="слово не найдено")
+        raise HTTPException(status_code=404, detail="The word was not found")
 
     existing_user_word = user_words_repository.find_user_word(session, user_id, word_id)
     if existing_user_word is not None:
-        raise HTTPException(status_code=409, detail="слово уже добавлено")
+        raise HTTPException(status_code=409, detail="The word has already been added")
     return user_words_repository.create_user_word(session, user_id, word_id)
 
 
 def delete_word(session: Session, user_id: int, word_id: int):
     user_word = user_words_repository.find_user_word(session, user_id, word_id)
     if user_word is None:
-        raise HTTPException(status_code=404, detail="слово не найдено в вашем словаре")
+        raise HTTPException(
+            status_code=404, detail="The word was not found in your dictionary"
+        )
     user_words_repository.delete_user_word(session, user_word)
-    return {"message": "слово удалено"}
+    return {"message": "The word has been deleted"}
 
 
 def review_word(session: Session, user_id: int, word_id: int, rating: str):
     user_word = user_words_repository.find_user_word(session, user_id, word_id)
+
     if user_word is None:
-        raise HTTPException(status_code=404, detail="слово не найдено в вашем словаре")
-
-    valid_ratings = {"again", "hard", "good", "easy"}
-    if rating not in valid_ratings:
-        raise HTTPException(status_code=400, detail="неверный рейтинг")
-
-    now = datetime.now()
-
-    if rating == "again":
-        user_word.status = "learning"
-        user_word.interval = 0
-        user_word.next_review = now + timedelta(minutes=10)
-
-    elif rating == "hard":
-        user_word.status = "review"
-        user_word.repetitions += 1
-
-        if user_word.interval == 0:
-            user_word.interval = 1
-        else:
-            user_word.interval = max(
-                1,
-                round(user_word.interval * 1.2),
-            )
-
-        user_word.next_review = now + timedelta(days=user_word.interval)
-
-        user_word.ease_factor = max(
-            1.3,
-            user_word.ease_factor - 0.15,
+        raise HTTPException(
+            status_code=404,
+            detail="The word was not found in your dictionary",
         )
 
-    elif rating == "good":
-        user_word.status = "review"
-        user_word.repetitions += 1
+    valid_ratings = {"again", "hard", "good", "easy"}
 
-        if user_word.interval == 0:
-            user_word.interval = 3
-        else:
-            user_word.interval = round(user_word.interval * user_word.ease_factor)
+    if rating not in valid_ratings:
+        raise HTTPException(status_code=400, detail="Invalid rating")
 
-        user_word.next_review = now + timedelta(days=user_word.interval)
+    now = datetime.now()
+    result = schedule_card(user_word, rating, now)
 
-    elif rating == "easy":
-        user_word.status = "review"
-        user_word.repetitions += 1
+    updated_user_word = user_words_repository.update_review(
+        session, user_word, result, now
+    )
+    updated_user_word.intervals = preview_intervals(updated_user_word, now)
 
-        if user_word.interval == 0:
-            user_word.interval = 7
-        else:
-            user_word.interval = round(user_word.interval * user_word.ease_factor * 1.3)
-
-        user_word.next_review = now + timedelta(days=user_word.interval)
-
-        user_word.ease_factor += 0.15
-
-    user_word.last_review = now
-
-    session.commit()
-    session.refresh(user_word)
-
-    return user_word
+    return updated_user_word
 
 
-def get_review_words(session: Session, user_id: int, limit: int = 20):
-    return user_words_repository.get_review_words(session, user_id, limit)
+def get_review_words(session: Session, user_id: int):
+    return user_words_repository.get_review_words(session, user_id)
 
 
-def get_learn_words(session: Session, user_id: int, limit: int = 20):
-    return user_words_repository.get_learn_words(session, user_id, limit)
+def get_learn_words(session: Session, user_id: int):
+    return user_words_repository.get_learn_words(session, user_id)
+
+
+def get_review_session_words(session: Session, user_id: int):
+    user_words = user_words_repository.get_review_session_words(session, user_id)
+    now = datetime.now()
+
+    for user_word in user_words:
+        user_word.intervals = preview_intervals(user_word, now)
+
+    return user_words
 
 
 def get_user_words_stats(session: Session, user_id: int):

@@ -25,10 +25,15 @@ class UserWord(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     user_id: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"))
     word_id: Mapped[int] = mapped_column(ForeignKey("words.id", ondelete="CASCADE"))
+
     status: Mapped[str] = mapped_column(String(20), default="new")
     repetitions: Mapped[int] = mapped_column(default=0)
     interval: Mapped[int] = mapped_column(default=0)
     ease_factor: Mapped[float] = mapped_column(default=2.5)
+
+    learning_step: Mapped[int] = mapped_column(default=0)
+    lapses: Mapped[int] = mapped_column(default=0)
+
     next_review: Mapped[datetime | None] = mapped_column(nullable=True)
     last_review: Mapped[datetime | None] = mapped_column(nullable=True)
 
