@@ -2,44 +2,25 @@ const en = {
   readme: {
     welcome: "Welcome to CHNZME",
 
-    description: "CHNZME is a web application for learning Chinese.",
+    description:
+      "A web application for learning Chinese. Vocabulary, a personal dictionary, spaced repetition, and HSK materials — all in one place.",
 
-    materials:
-      "It contains the main materials and tools for learning Chinese: words, grammar, and HSK vocabulary.",
+    featuresTitle: "Current features",
 
-    whatIs: "What is CHNZME?",
+    features: [
+      "Learn Chinese vocabulary by HSK level.",
+      "Save words to your personal dictionary.",
+      "Review vocabulary using spaced repetition.",
+      "Track your learning progress.",
+    ],
 
-    idea: "The main idea of CHNZME is to bring the Chinese learning process together in one place.",
+    contributeTitle: "An evolving project",
 
-    canDo: "On the website you can:",
+    contributeDescription:
+      "CHNZME is a project I'm building step by step to make learning Chinese more convenient and effective.",
 
-    learnWords: "learn Chinese words;",
-    learnPinyin: "learn pinyin and translations;",
-    learnGrammar: "study grammatical structures;",
-    learnHsk: "study vocabulary by HSK levels;",
-    review: "review previously learned material;",
-    progress: "track your progress.",
-
-    guide: "Guide",
-
-    guideDescription: "To get started, choose a section from the sidebar.",
-
-    words: "a section for learning Chinese vocabulary.",
-    grammar: "a section with grammar rules and structures.",
-    profile: "your personal profile and progress information.",
-
-    goal: "Goal",
-
-    goalDescription:
-      "CHNZME was created as a convenient place for systematic Chinese language learning.",
-
-    goalDescription2:
-      "The main goal is to learn the language gradually, review the material regularly, and track your progress.",
-
-    startLearning: "Start Learning",
-
-    startDescription:
-      "Choose Words or Grammar from the sidebar and start learning.",
+    contributeInvitation:
+      "I'm open to suggestions, ideas, and contributions. I'm especially interested in ideas for the grammar section, learning material organization, and new features.",
   },
 
   words: {
@@ -80,6 +61,23 @@ const en = {
     loading: "Loading your dictionary...",
     deleteError: "Failed to remove the word. Please try again.",
     errorLoading: "Failed to load dictionary",
+  },
+
+  review: {
+    title: "Review",
+    loading: "Loading review...",
+    showAnswer: "Show answer",
+
+    again: "Again",
+    hard: "Hard",
+    good: "Good",
+    easy: "Easy",
+
+    completed: "Review completed",
+    noWords: "There are no words to review right now.",
+
+    errorLoading: "Failed to load review",
+    reviewError: "Failed to submit review. Please try again.",
   },
 };
 

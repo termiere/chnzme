@@ -14,18 +14,23 @@ function getReviewStatus(status: string, nextReview: Date | null): string {
     return "NEW";
   }
 
-  if (!nextReview) {
+  if (!nextReview || Number.isNaN(nextReview.getTime())) {
     return "LEARNING";
   }
 
-  const now = new Date();
-  const diff = nextReview.getTime() - now.getTime();
+  const diff = nextReview.getTime() - Date.now();
 
   if (diff <= 0) {
     return "NOW";
   }
 
-  const hours = Math.ceil(diff / (1000 * 60 * 60));
+  const minutes = Math.ceil(diff / (1000 * 60));
+
+  if (minutes < 60) {
+    return `IN ${minutes}M`;
+  }
+
+  const hours = Math.ceil(minutes / 60);
 
   if (hours < 24) {
     return `IN ${hours}H`;

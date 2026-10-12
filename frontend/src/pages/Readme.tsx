@@ -10,52 +10,19 @@ function Readme({ language }: ReadmeProps) {
 
   return (
     <main className="readme">
-      <h1># {text.welcome}</h1>
-
+      <h1>{text.welcome}</h1>
       <p>{text.description}</p>
 
-      <p>{text.materials}</p>
-
-      <h1># {text.whatIs}</h1>
-
-      <p>{text.idea}</p>
-
-      <p>{text.canDo}</p>
-
+      <h2>{text.featuresTitle}</h2>
       <ul>
-        <li>{text.learnWords}</li>
-        <li>{text.learnPinyin}</li>
-        <li>{text.learnGrammar}</li>
-        <li>{text.learnHsk}</li>
-        <li>{text.review}</li>
-        <li>{text.progress}</li>
+        {text.features.map((feature) => (
+          <li key={feature}>{feature}</li>
+        ))}
       </ul>
 
-      <h1># {text.guide}</h1>
-
-      <p>{text.guideDescription}</p>
-
-      <p>
-        <strong>Words</strong> — {text.words}
-      </p>
-
-      <p>
-        <strong>Grammar</strong> — {text.grammar}
-      </p>
-
-      <p>
-        <strong>Profile</strong> — {text.profile}
-      </p>
-
-      <h1># {text.goal}</h1>
-
-      <p>{text.goalDescription}</p>
-
-      <p>{text.goalDescription2}</p>
-
-      <h1># {text.startLearning}</h1>
-
-      <p>{text.startDescription}</p>
+      <h2>{text.contributeTitle}</h2>
+      <p>{text.contributeDescription}</p>
+      <p>{text.contributeInvitation}</p>
     </main>
   );
 }

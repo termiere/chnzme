@@ -4,16 +4,19 @@ import { mapWordDtoToDomain } from "./words";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-// --- DTOs (Ответы бэкенда) ---
 export interface UserWordResponseDTO {
   id: number;
   word: WordDTO;
+
   status: string;
+  learning_step: number;
   repetitions: number;
   interval: number;
   ease_factor: number;
+  lapses: number;
   next_review: string | null;
   last_review: string | null;
+  intervals?: Record<string, number> | null;
 }
 
 export interface ReviewRequestDTO {
@@ -25,19 +28,21 @@ export interface UserWordsStatsDTO {
   review: number;
 }
 
-// --- Domain Models (Интерфейсы для UI) ---
 export interface UserWord {
-  userWordId: number; // Уникальный ID связи user-word
-  word: Word; // Вытащенная модель самого слова
+  userWordId: number;
+  word: Word;
+
   status: string;
+  learningStep: number;
   repetitions: number;
   interval: number;
   easeFactor: number;
+  lapses: number;
   nextReview: Date | null;
   lastReview: Date | null;
+  intervals: Record<string, number> | null;
 }
 
-// --- Mapper ---
 export function mapUserWordDtoToDomain(
   dto: UserWordResponseDTO,
   lang: string = "ru",
@@ -45,12 +50,16 @@ export function mapUserWordDtoToDomain(
   return {
     userWordId: dto.id,
     word: mapWordDtoToDomain(dto.word, lang),
+
     status: dto.status,
+    learningStep: dto.learning_step,
     repetitions: dto.repetitions,
     interval: dto.interval,
     easeFactor: dto.ease_factor,
+    lapses: dto.lapses,
     nextReview: dto.next_review ? new Date(dto.next_review) : null,
     lastReview: dto.last_review ? new Date(dto.last_review) : null,
+    intervals: dto.intervals ?? null,
   };
 }
 
@@ -126,6 +135,79 @@ export async function reviewUserWord(
   const data: UserWordResponseDTO = await response.json();
   return mapUserWordDtoToDomain(data, lang);
 }
+
+export async function getReviewSessionWords(
+  lang: string = "ru",
+  limit: number = 20,
+): Promise<UserWord[]> {
+  const response = await fetch(
+    `${API_URL}/api/v1/user-words/review-session?limit=${limit}`,
+    {
+      headers: getAuthHeaders(),
+    },
+  );
+
+  if (!response.ok) {
+    if (response.status === 401) {
+      throw new Error("Authorization is required");
+    }
+
+    throw new Error("Failed to fetch review session");
+  }
+
+  const data: UserWordResponseDTO[] = await response.json();
+
+  return data.map((dto) => mapUserWordDtoToDomain(dto, lang));
+}
+
+export async function getReviewWords(
+  lang: string = "ru",
+  limit: number = 20,
+): Promise<UserWord[]> {
+  const response = await fetch(
+    `${API_URL}/api/v1/user-words/review?limit=${limit}`,
+    {
+      headers: getAuthHeaders(),
+    },
+  );
+
+  if (!response.ok) {
+    if (response.status === 401) {
+      throw new Error("Требуется авторизация");
+    }
+
+    throw new Error("Failed to fetch review words");
+  }
+
+  const data: UserWordResponseDTO[] = await response.json();
+
+  return data.map((dto) => mapUserWordDtoToDomain(dto, lang));
+}
+
+export async function getLearnWords(
+  lang: string = "ru",
+  limit: number = 20,
+): Promise<UserWord[]> {
+  const response = await fetch(
+    `${API_URL}/api/v1/user-words/learn?limit=${limit}`,
+    {
+      headers: getAuthHeaders(),
+    },
+  );
+
+  if (!response.ok) {
+    if (response.status === 401) {
+      throw new Error("Требуется авторизация");
+    }
+
+    throw new Error("Failed to fetch learn words");
+  }
+
+  const data: UserWordResponseDTO[] = await response.json();
+
+  return data.map((dto) => mapUserWordDtoToDomain(dto, lang));
+}
+
 // 4. Удаление слова из изучении (Удаление связки по word_id)
 export async function deleteUserWord(wordId: number): Promise<void> {
   const response = await fetch(`${API_URL}/api/v1/user-words/${wordId}`, {

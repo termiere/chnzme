@@ -1,0 +1,270 @@
+/* =========================
+   REVIEW
+   ========================= */
+
+.review-page {
+  width: 100%;
+  min-height: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.review-state {
+  color: var(--muted);
+}
+
+.review-progress {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.review-progress-track {
+  flex: 1;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--line);
+  overflow: hidden;
+}
+
+.review-progress-fill {
+  height: 100%;
+  background: var(--ink);
+  transition: width 0.25s ease;
+}
+
+.review-card {
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  padding: 56px;
+
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+}
+
+.review-word {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: clamp(88px, 14vw, 128px);
+  line-height: 1.15;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  text-align: center;
+  font-weight: 400;
+  color: var(--ink);
+}
+
+.review-answer {
+  min-height: 84px;
+  margin-top: 24px;
+  text-align: center;
+  transition: opacity 0.15s ease;
+}
+
+.review-answer--hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.review-pinyin {
+  margin-bottom: 6px;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.review-translation {
+  font-size: 20px;
+  color: var(--muted);
+}
+
+.review-show-answer {
+  margin-top: 32px;
+  padding: 12px 24px;
+
+  border: 1px solid var(--ink);
+  border-radius: var(--radius-sm);
+  background: var(--ink);
+  color: var(--bg);
+
+  font-size: 15px;
+  font-weight: 500;
+
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.review-show-answer:hover {
+  opacity: 0.85;
+}
+
+.review-show-answer:focus-visible,
+.review-rate:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+.review-actions {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+
+  width: 100%;
+  max-width: 560px;
+  margin-top: 32px;
+}
+
+.review-rate {
+  position: relative;
+  min-height: 60px;
+  padding: 10px 12px;
+
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: var(--ink);
+
+  font-size: 14px;
+  font-weight: 500;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.1s ease;
+}
+
+.review-rate kbd {
+  position: absolute;
+  top: 6px;
+  left: 8px;
+  font-family: inherit;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.review-rate:hover {
+  border-color: var(--ink);
+}
+
+.review-rate:active {
+  transform: scale(0.98);
+}
+
+.review-rate:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.review-rate--good {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--bg);
+}
+
+.review-rate--good kbd {
+  color: var(--on-ink-muted);
+}
+
+.review-inline-error {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--danger);
+}
+
+.review-rate-interval {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.review-rate--good .review-rate-interval {
+  color: var(--on-ink-muted);
+}
+
+@media (max-width: 768px) {
+  .review-card {
+    padding: 40px 28px;
+  }
+}
+
+@media (max-width: 600px) {
+  .review-page {
+    padding: 0;
+  }
+
+  .review-card {
+    min-height: 380px;
+    padding: 32px 20px;
+    border-radius: var(--radius);
+  }
+
+  .review-pinyin {
+    font-size: 20px;
+  }
+
+  .review-translation {
+    font-size: 18px;
+  }
+
+  .review-actions {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .review-rate kbd {
+    display: none;
+  }
+
+  .review-rate {
+    min-height: 64px;
+  }
+
+  .review-show-answer {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+  }
+}
+
+/* Низкие экраны (телефон в ландшафте) */
+@media (max-height: 520px) {
+  .review-card {
+    min-height: 0;
+    padding: 20px;
+  }
+
+  .review-word {
+    font-size: 72px;
+  }
+
+  .review-answer {
+    min-height: 64px;
+    margin-top: 12px;
+  }
+
+  .review-show-answer,
+  .review-actions {
+    margin-top: 16px;
+  }
+}

@@ -10,6 +10,7 @@ import AuthModal from "./components/AuthModal";
 import Readme from "./pages/Readme";
 import Words from "../src/pages/Words";
 import Dictionary from "./pages/Dictionary";
+import Review from "./pages/Review";
 
 function App() {
   const [language, setLanguage] = useState("ru");
@@ -37,6 +38,7 @@ function App() {
               path="/dictionary"
               element={<Dictionary language={language} />}
             />
+            <Route path="/review" element={<Review language={language} />} />
           </Routes>
         </main>
 

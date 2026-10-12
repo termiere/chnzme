@@ -2,7 +2,7 @@
 
 .words-list {
   display: flex;
-  grid-template-columns: repeat(2, 1fr);
+  flex-wrap: wrap;
   gap: 10px;
 }
 
@@ -12,10 +12,10 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 20px;
-  background-color: #ffffff;
-  border: 1px solid #e5e5e5;
-  border-radius: 12px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  background-color: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
   box-sizing: border-box;
 
   font-family: inherit;
@@ -32,8 +32,8 @@
 
 @media (hover: hover) and (pointer: fine) {
   .words-block:hover {
-    border-color: #d1d1d1;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-color: var(--line-hover);
+    box-shadow: var(--shadow-md);
     transform: translateY(-1px);
   }
 
@@ -45,13 +45,13 @@
 .words-block-title {
   font-size: 18px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--ink);
 }
 
 .words-block-description {
   font-size: 16px;
   font-weight: normal;
-  color: #888888;
+  color: var(--muted);
 }
 
 .words-section {
@@ -59,7 +59,7 @@
 }
 
 .words-section h2 {
-  color: #989898;
+  color: var(--muted);
   margin-bottom: 10px;
 }
 
@@ -85,10 +85,10 @@
   justify-content: space-between;
   min-height: 160px;
   padding: 16px 20px;
-  background-color: #ffffff;
-  border: 1px solid #e5e5e5;
-  border-radius: 12px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  background-color: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
   box-sizing: border-box;
   transition:
     transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
@@ -99,8 +99,8 @@
 /* Эффекты наведения только для устройств с мышью */
 @media (hover: hover) and (pointer: fine) {
   .word-card:hover {
-    border-color: #d1d1d1;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-color: var(--line-hover);
+    box-shadow: var(--shadow-md);
     transform: translateY(-1px);
   }
 
@@ -122,12 +122,12 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: #d0d0d0;
+  background-color: var(--line-strong);
   flex-shrink: 0;
 }
 
 .status-dot.is-urgent {
-  background-color: #666666;
+  background-color: var(--muted-strong);
 }
 
 .word-card-actions {
@@ -141,16 +141,16 @@
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.04em;
-  color: #666666;
-  background-color: #f2f2f2;
+  color: var(--muted-strong);
+  background-color: var(--bg-soft);
   padding: 3px 8px;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   white-space: nowrap;
 }
 
 .word-badge.badge-urgent {
-  color: #111111;
-  background-color: #e8e8e8;
+  color: var(--ink);
+  background-color: var(--bg-hover);
 }
 
 /* Кнопка удаления */
@@ -162,10 +162,10 @@
   height: 28px;
   border: none;
   background: transparent;
-  color: #999999;
+  color: var(--muted);
   font-size: 1.2rem;
   line-height: 1;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   cursor: pointer;
   opacity: 0.5; /* По умолчанию слегка видна для удобства */
   transition: all 0.15s ease;
@@ -179,13 +179,13 @@
 }
 
 .word-delete-btn:hover {
-  background-color: #f0f0f0;
-  color: #111111;
+  background-color: var(--bg-soft);
+  color: var(--ink);
   opacity: 1;
 }
 
 .word-delete-btn:active {
-  background-color: #e5e5e5;
+  background-color: var(--bg-hover);
 }
 
 /* Главный элемент - Иероглиф */
@@ -201,7 +201,7 @@
 .word-hanzi {
   font-size: 2.25rem;
   font-weight: 500;
-  color: #111111;
+  color: var(--ink);
   line-height: 1.1;
   letter-spacing: 0.02em;
   word-break: keep-all;
@@ -219,18 +219,21 @@
 }
 
 .word-pinyin {
-  color: #111111;
+  color: var(--ink);
   font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .word-divider {
-  color: #cccccc;
+  color: var(--line-strong);
   font-weight: 300;
   user-select: none;
 }
 
 .word-translation {
-  color: #666666;
+  color: var(--muted-strong);
   font-weight: 400;
   max-width: 100%;
   overflow: hidden;
@@ -243,10 +246,10 @@
   padding: 5px 10px;
   font-size: 0.75rem;
   font-weight: 500;
-  border: 1px solid #d0d0d0;
-  border-radius: 6px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
   background-color: transparent;
-  color: #333333;
+  color: var(--ink);
   cursor: pointer;
   white-space: nowrap;
   transition: all 0.15s ease;
@@ -255,20 +258,20 @@
 
 @media (hover: hover) and (pointer: fine) {
   .word-add-btn:hover:not(:disabled) {
-    background-color: #f2f2f2;
-    border-color: #b0b0b0;
-    color: #111111;
+    background-color: var(--bg-soft);
+    border-color: var(--line-hover);
+    color: var(--ink);
   }
 }
 
 .word-add-btn:active:not(:disabled) {
-  background-color: #e8e8e8;
+  background-color: var(--bg-hover);
 }
 
 .word-add-btn.is-added {
   border-color: transparent;
-  background-color: #f0f0f0;
-  color: #888888;
+  background-color: var(--bg-soft);
+  color: var(--muted);
   cursor: default;
 }
 
@@ -280,13 +283,21 @@
 .words-empty {
   padding: 32px 0;
   text-align: center;
-  color: #777777;
+  color: var(--muted);
   font-size: 0.95rem;
 }
 
 /* ==========================================
    Адаптивные медиа-запросы (Media Queries)
    ========================================== */
+
+/* Блоки разделов: на телефоне — в колонку на всю ширину */
+@media (max-width: 600px) {
+  .words-block {
+    flex: 1 1 100%;
+    padding: 16px;
+  }
+}
 
 /* Мобильные устройства (ширина до 480px) */
 @media (max-width: 480px) {
@@ -299,7 +310,7 @@
   .word-card {
     min-height: 140px;
     padding: 12px 14px;
-    border-radius: 10px;
+    border-radius: var(--radius-sm);
   }
 
   .word-hanzi {
@@ -349,13 +360,13 @@
   margin: 10px 0px;
   font-size: 16px;
 
-  background-color: #ffffff;
-  border: 1px solid #e5e5e5;
-  border-radius: 12px;
+  background-color: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
 
   text-align: left;
   text-decoration: none;
-  color: #1a1a1a;
+  color: var(--ink);
   cursor: pointer;
 
   box-sizing: border-box;
@@ -368,8 +379,8 @@
 
 @media (hover: hover) and (pointer: fine) {
   .back-to-levels-card:hover {
-    border-color: #d1d1d1;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-color: var(--line-hover);
+    box-shadow: var(--shadow-md);
     transform: translateY(-1px);
   }
 }
@@ -380,5 +391,5 @@
 
 .back-to-levels-arrow {
   font-size: 1rem;
-  color: #999999;
+  color: var(--muted);
 }
