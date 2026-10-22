@@ -10,8 +10,15 @@ security = HTTPBearer()
 
 
 def get_session():
-    with session_factory() as session:
+    session = session_factory()
+    try:
         yield session
+        session.commit()
+    except Exception:
+        session.rollback()
+        raise
+    finally:
+        session.close()
 
 
 def get_current_user(

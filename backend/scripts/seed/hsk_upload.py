@@ -24,6 +24,7 @@ DATA_PATHS = [
 
 
 def seed_hsk() -> None:
+    print("Читаю JSON...", flush=True)
     all_words = []
 
     for data_path in DATA_PATHS:
@@ -39,8 +40,13 @@ def seed_hsk() -> None:
     deleted_words = 0
     added_translations = 0
 
+    print(f"JSON загружен: {len(all_words)} слов", flush=True)
+    print("Подключаюсь к базе...", flush=True)
+
     with Session(engine) as session:
+        print("Подключение успешно", flush=True)
         db_words = session.scalars(select(Word)).all()
+
         for word in db_words:
             key = (word.character, word.hsk_level)
 
@@ -54,7 +60,12 @@ def seed_hsk() -> None:
                 session.delete(word)
                 deleted_words += 1
 
+        print("Начинаю обработку слов...", flush=True)
         for hsk_word in all_words:
+
+            if added_words % 50 == 0:
+                print(f"Обработка: {added_words} новых слов", flush=True)
+
             word = session.scalar(
                 select(Word).where(
                     Word.character == hsk_word.character,
@@ -89,15 +100,13 @@ def seed_hsk() -> None:
             for language, translation in translations.items():
 
                 existing_translation = session.scalar(
-                    select(Word).where(
-                        Word.character == hsk_word.character,
-                        Word.pinyin == hsk_word.pinyin,
-                        Word.hsk_level == hsk_word.hsk_level,
+                    select(WordTranslation).where(
+                        WordTranslation.word_id == word.id,
+                        WordTranslation.language == language,
                     )
                 )
 
                 if existing_translation is None:
-
                     session.add(
                         WordTranslation(
                             word_id=word.id,
@@ -105,12 +114,9 @@ def seed_hsk() -> None:
                             translation=translation,
                         )
                     )
-
                     added_translations += 1
-
                 else:
                     existing_translation.translation = translation
-
         session.commit()
 
     print(f"added_words: {added_words}")

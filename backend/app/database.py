@@ -1,13 +1,13 @@
-from sqlalchemy import create_engine
 from sqlalchemy.orm import Session, sessionmaker, DeclarativeBase
+from app.core.quiet_dialect import get_engine
 
-from app.core.config import settings
+engine = get_engine()
 
-engine = create_engine(url=settings.DATABASE_URL, echo=True)
 session_factory = sessionmaker(
     bind=engine,
     class_=Session,
     expire_on_commit=False,
+    autoflush=False,
 )
 
 
