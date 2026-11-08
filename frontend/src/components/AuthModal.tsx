@@ -1,5 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import type { FormEvent } from "react";
 import { useAuth } from "../context/AuthContext";
+import { registerUser } from "../api/auth";
+
+import "../styles/Auth.css";
+type Mode = "login" | "register";
 
 type AuthModalProps = {
   onClose: () => void;
@@ -7,80 +12,69 @@ type AuthModalProps = {
 
 function AuthModal({ onClose }: AuthModalProps) {
   const { login } = useAuth();
-  const [isLogin, setIsLogin] = useState(true);
-  const [isSuccess, setIsSuccess] = useState(false);
 
+  const [mode, setMode] = useState<Mode>("login");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
-  const API_URL = import.meta.env.VITE_API_URL;
+  const isLogin = mode === "login";
 
-  const handleSubmit = async (event: React.FormEvent) => {
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [onClose]);
+
+  const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
-
     setError("");
     setIsLoading(true);
 
     try {
       if (isLogin) {
         await login(username, password);
-
-        setIsSuccess(true);
-
-        return;
+      } else {
+        await registerUser(username, password);
       }
-
-      const response = await fetch(`${API_URL}/api/v1/auth/register`, {
-        method: "POST",
-
-        headers: {
-          "Content-Type": "application/json",
-        },
-
-        body: JSON.stringify({
-          username,
-          password,
-        }),
-      });
-
-      if (!response.ok) {
-        const data = await response.json();
-
-        setError(
-          typeof data.detail === "string" ? data.detail : "Registration failed",
-        );
-
-        return;
-      }
-
       setIsSuccess(true);
-    } catch {
-      setError("Unable to connect to the server");
+    } catch (err) {
+      if (err instanceof TypeError) {
+        setError("Unable to connect to the server");
+      } else {
+        setError(err instanceof Error ? err.message : "Something went wrong");
+      }
     } finally {
       setIsLoading(false);
     }
   };
 
-  const handleSwitch = (login: boolean) => {
-    setIsLogin(login);
+  const switchMode = (next: Mode) => {
+    setMode(next);
+    setPassword("");
     setError("");
   };
 
   return (
-    <div className="auth-overlay" onClick={onClose}>
-      <div className="auth-modal" onClick={(event) => event.stopPropagation()}>
-        <button className="auth-close" onClick={onClose}>
-          ×
-        </button>
-
+    <div className="auth-overlay" onMouseDown={onClose}>
+      <div
+        className="auth-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="auth-title"
+        onMouseDown={(e) => e.stopPropagation()}
+      >
         {isSuccess ? (
           <div className="auth-success">
             <div className="auth-success-icon">✓</div>
 
-            <h2>{isLogin ? "Welcome back" : "Account created"}</h2>
+            <h2 id="auth-title" className="auth-title">
+              {isLogin ? "Welcome back" : "Account created"}
+            </h2>
 
             <p>
               {isLogin
@@ -88,24 +82,39 @@ function AuthModal({ onClose }: AuthModalProps) {
                 : "Your account has been successfully created."}
             </p>
 
-            <button className="auth-submit" onClick={onClose}>
+            <button type="button" className="auth-submit" onClick={onClose}>
               Continue
             </button>
           </div>
         ) : (
           <>
-            <h2>{isLogin ? "Sign in" : "Create account"}</h2>
+            <div className="auth-header">
+              <h2 id="auth-title" className="auth-title">
+                #{isLogin ? "sign in" : "create account"}
+              </h2>
+
+              <button
+                type="button"
+                className="auth-close"
+                onClick={onClose}
+                aria-label="Close"
+              >
+                ×
+              </button>
+            </div>
 
             <form onSubmit={handleSubmit}>
               <div className="auth-field">
-                <label>Username</label>
-
+                <label htmlFor="auth-username">username</label>
                 <input
+                  id="auth-username"
                   type="text"
-                  placeholder="Enter your username"
+                  autoComplete="username"
+                  autoFocus
+                  placeholder="enter your username"
                   value={username}
-                  onChange={(event) => {
-                    setUsername(event.target.value);
+                  onChange={(e) => {
+                    setUsername(e.target.value);
                     setError("");
                   }}
                   required
@@ -113,21 +122,26 @@ function AuthModal({ onClose }: AuthModalProps) {
               </div>
 
               <div className="auth-field">
-                <label>Password</label>
-
+                <label htmlFor="auth-password">password</label>
                 <input
+                  id="auth-password"
                   type="password"
-                  placeholder="Enter your password"
+                  autoComplete={isLogin ? "current-password" : "new-password"}
+                  placeholder="enter your password"
                   value={password}
-                  onChange={(event) => {
-                    setPassword(event.target.value);
+                  onChange={(e) => {
+                    setPassword(e.target.value);
                     setError("");
                   }}
                   required
                 />
               </div>
 
-              {error && <div className="auth-error">{error}</div>}
+              {error && (
+                <div className="auth-error" role="alert">
+                  {error}
+                </div>
+              )}
 
               <button
                 type="submit"
@@ -137,27 +151,23 @@ function AuthModal({ onClose }: AuthModalProps) {
                 {isLoading
                   ? "Please wait..."
                   : isLogin
-                    ? "Sign in"
-                    : "Create account"}
+                    ? "sign in"
+                    : "create account"}
               </button>
             </form>
 
             <div className="auth-switch">
-              {isLogin ? (
-                <>
-                  <span>Don't have an account?</span>
-
-                  <button onClick={() => handleSwitch(false)}>
-                    Create account
-                  </button>
-                </>
-              ) : (
-                <>
-                  <span>Already have an account?</span>
-
-                  <button onClick={() => handleSwitch(true)}>Sign in</button>
-                </>
-              )}
+              <span>
+                {isLogin
+                  ? "don't have an account?"
+                  : "already have an account?"}
+              </span>
+              <button
+                type="button"
+                onClick={() => switchMode(isLogin ? "register" : "login")}
+              >
+                {isLogin ? "create account" : "sign in"}
+              </button>
             </div>
           </>
         )}

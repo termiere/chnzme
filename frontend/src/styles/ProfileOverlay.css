@@ -1,7 +1,3 @@
-/* =========================
-   PROFILE OVERLAY
-   ========================= */
-
 .profile-overlay {
   position: fixed;
   inset: 0;
@@ -11,68 +7,66 @@
   justify-content: center;
 
   background-color: var(--overlay);
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 
   z-index: 1000;
-}
 
-/* =========================
-   PROFILE MODAL
-   ========================= */
+  animation: profile-fade-in 0.2s ease;
+}
 
 .profile-modal {
   position: relative;
 
-  width: min(100% - 32px, 420px);
+  width: min(100% - 32px, 380px);
   padding: 24px;
+  box-sizing: border-box;
 
-  background-color: var(--bg-soft);
-  border: 1px solid var(--line-strong);
+  background-color: var(--bg);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
 
   font-family: inherit;
 
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  animation: profile-pop-in 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
-/* =========================
-   HEADER
-   ========================= */
 
 .profile-header {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  gap: 12px;
 
-  margin-bottom: 24px;
+  padding-bottom: 20px;
 }
 
-/* =========================
-   PROFILE INFO
-   ========================= */
-
-.profile-info {
+/* .profile-info {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
+  min-width: 0;
 }
+
+.profile-info::before {
+  content: "#profile";
+  font-size: 18px;
+  font-weight: 700;
+} */
 
 .profile-info-username {
   margin: 0;
 
-  font-family: inherit;
   font-size: 18px;
   font-weight: 700;
-  line-height: 1.2;
+  color: var(--muted);
 
-  color: var(--ink);
+  word-break: break-all;
 }
 
-/* =========================
-   CLOSE
-   ========================= */
-
 .profile-close {
+  flex-shrink: 0;
+
   width: 28px;
   height: 28px;
 
@@ -80,52 +74,38 @@
   align-items: center;
   justify-content: center;
 
-  margin: -4px -4px 0 0;
+  margin: -4px -6px 0 0;
   padding: 0;
 
   background: transparent;
   border: none;
+  border-radius: var(--radius-sm);
 
   font-family: inherit;
-  font-size: 24px;
-  font-weight: 400;
+  font-size: 22px;
   line-height: 1;
-
   color: var(--muted);
 
   cursor: pointer;
-
+  color: var(--ink);
   transition:
     color 0.15s ease,
     background-color 0.15s ease;
 }
 
-.profile-close:hover {
-  color: var(--ink);
-  background-color: var(--bg-hover);
-  border-radius: var(--radius-sm);
-}
-
-/* =========================
-   LOG OUT
-   ========================= */
-
 .profile-logout {
   width: 100%;
-
   padding: 10px 14px;
 
   background: transparent;
+  color: var(--ink);
+  border-color: var(--ink);
   border: 1px solid var(--line-strong);
   border-radius: var(--radius-sm);
 
   font-family: inherit;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.2;
+  font-size: 18px;
   text-align: center;
-
-  color: var(--muted);
 
   cursor: pointer;
 
@@ -138,13 +118,42 @@
 .profile-logout:hover {
   color: var(--ink);
   border-color: var(--ink);
-  background-color: var(--bg-hover);
+}
+
+.profile-logout:active {
+  background-color: var(--bg-soft);
+}
+
+@keyframes profile-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes profile-pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-overlay,
+  .profile-modal {
+    animation: none;
+  }
 }
 
 @media (max-width: 600px) {
   .profile-modal {
     padding: 20px;
-    border-radius: var(--radius);
   }
 }
 
@@ -152,6 +161,7 @@
   .profile-close {
     width: 40px;
     height: 40px;
+    margin: -8px -10px 0 0;
   }
 
   .profile-logout {

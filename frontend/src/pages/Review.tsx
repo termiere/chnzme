@@ -3,11 +3,8 @@ import { useEffect, useState } from "react";
 import ru from "../locales/ru";
 import en from "../locales/en";
 
-import {
-  reviewUserWord,
-  getReviewSessionWords,
-  type UserWord,
-} from "../api/userWords";
+import { reviewUserWord, getReviewSessionWords } from "../api/userWords";
+import type { UserWord } from "../types/userWords";
 import { formatInterval } from "../utils/formatInterval";
 import "../styles/Review.css";
 

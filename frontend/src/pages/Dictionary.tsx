@@ -1,13 +1,15 @@
 // src/pages/Dictionary.tsx
-import { useEffect, useState } from "react";
-import { ChevronLeft } from "lucide-react";
+import { useEffect, useState, useMemo } from "react";
+import { ChevronLeft, Search } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import ru from "../locales/ru";
 import en from "../locales/en";
 
 import WordItem from "../components/WordItem";
-import { type UserWord, getUserWords, deleteUserWord } from "../api/userWords";
+import { getUserWords, deleteUserWord } from "../api/userWords";
+import type { UserWord } from "../types/userWords";
+import { matchesWord } from "../utils/searchWords";
 
 import "../styles/Words.css";
 
@@ -20,6 +22,12 @@ function Dictionary({ language }: DictionaryProps) {
   const [userWords, setUserWords] = useState<UserWord[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [query, setQuery] = useState("");
+
+  const filteredWords = useMemo(
+    () => userWords.filter((uw) => matchesWord(uw.word, query)),
+    [userWords, query],
+  );
 
   useEffect(() => {
     let isMounted = true;
@@ -63,16 +71,30 @@ function Dictionary({ language }: DictionaryProps) {
     <section className="dictionary">
       <h1>#dictionary</h1>
 
-      <Link to="/words" className="back-to-levels-card">
-        <ChevronLeft />
-        <span>{text.back}</span>
-      </Link>
+      <div className="hsk-actions">
+        <Link to="/words" className="back-to-levels-card">
+          <ChevronLeft size={18} />
+          <span>{text.back}</span>
+        </Link>
+
+        <div className="search-card">
+          <Search size={18} />
+          <input
+            type="search"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder={text.search}
+          />
+        </div>
+      </div>
 
       {userWords.length === 0 ? (
         <p>{text.empty}</p>
+      ) : filteredWords.length === 0 ? (
+        <p>{text.noWords}</p>
       ) : (
         <div className="dictionary-list">
-          {userWords.map((userWord) => (
+          {filteredWords.map((userWord) => (
             <WordItem
               key={userWord.userWordId}
               hanzi={userWord.word.character}

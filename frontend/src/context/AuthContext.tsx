@@ -38,7 +38,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
       return;
     }
 
-    fetch(`${API_URL}/api/v1/auth/me`, {
+    fetch(`${API_URL}/api/v1/auth/profile`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -88,7 +88,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
     localStorage.setItem("access_token", data.access_token);
 
-    const meResponse = await fetch(`${API_URL}/api/v1/auth/me`, {
+    const meResponse = await fetch(`${API_URL}/api/v1/auth/profile`, {
       headers: {
         Authorization: `Bearer ${data.access_token}`,
       },

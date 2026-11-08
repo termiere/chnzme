@@ -111,6 +111,23 @@ def get_user_words_stats(session: Session, user_id: int):
     }
 
 
+def get_user_words_stats_by_hsk(session: Session, user_id: int, hsk_level: int):
+    user_words_count = session.scalar(
+        select(func.count(UserWord.id))
+        .join(Word, Word.id == UserWord.word_id)
+        .where(UserWord.user_id == user_id, Word.hsk_level == hsk_level)
+    )
+
+    total_words_count = session.scalar(
+        select(func.count()).select_from(Word).where(Word.hsk_level == hsk_level)
+    )
+
+    return {
+        "added_words_count": user_words_count or 0,
+        "total_words_count": total_words_count or 0,
+    }
+
+
 def get_review_session_words(session: Session, user_id: int):
     now = datetime.now()
     learn_ahead = now + timedelta(minutes=LEARN_AHEAD_MINUTES)

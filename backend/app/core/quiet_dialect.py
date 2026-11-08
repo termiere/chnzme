@@ -32,7 +32,7 @@ def get_engine():
             dbname=u.database,
             user=u.username,
             password=u.password,
-            sslmode="require",
+            sslmode=settings.DB_SSLMODE,
             connect_timeout=15,
             prepare_threshold=None,
         )

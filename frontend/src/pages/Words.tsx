@@ -1,16 +1,17 @@
-// src/pages/Words.tsx
-import { useEffect, useState } from "react";
-import { ChevronLeft } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
+import { ChevronLeft, Search } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 
 import ru from "../locales/ru";
 import en from "../locales/en";
 
 import { useWords } from "../hooks/useWords";
+import { useHskStats } from "../hooks/useHskStats";
 import { addUserWord, getUserWords } from "../api/userWords";
 import { WordList } from "../components/WordList";
 import AuthModal from "../components/AuthModal";
 import { useAuth } from "../context/AuthContext";
+import { matchesWord } from "../utils/searchWords";
 
 const HSK_LEVELS = [
   { level: 1, title: "#hsk1" },
@@ -29,6 +30,9 @@ function Words({ language }: WordsProps) {
   const { level } = useParams();
 
   const selectedHsk = level ? Number(level) : null;
+  const { stats: selectedHskStats } = useHskStats(user ? selectedHsk : null);
+  const [query, setQuery] = useState("");
+
   const [userWordIds, setUserWordIds] = useState<Set<number>>(new Set());
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const {
@@ -37,6 +41,15 @@ function Words({ language }: WordsProps) {
     isError,
     error,
   } = useWords(selectedHsk, language);
+
+  const filteredWords = useMemo(
+    () => words?.filter((w) => matchesWord(w, query)),
+    [words, query],
+  );
+
+  useEffect(() => {
+    setQuery("");
+  }, [selectedHsk]);
 
   useEffect(() => {
     if (!user) {
@@ -105,10 +118,31 @@ function Words({ language }: WordsProps) {
           <div className="hsk-content">
             <h1>#hsk{selectedHsk}</h1>
 
-            <Link to="/words" className="back-to-levels-card">
-              <ChevronLeft />
-              <span>{text.back}</span>
-            </Link>
+            <div className="hsk-actions">
+              <Link to="/words" className="back-to-levels-card">
+                <ChevronLeft size={18} />
+                <span>{text.back}</span>
+              </Link>
+
+              <div className="search-card">
+                <Search size={18} />
+                <input
+                  type="search"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder={text.search}
+                />
+              </div>
+
+              {selectedHskStats && (
+                <div className="hsk-progress-card">
+                  <span>
+                    {selectedHskStats.added_words_count}/
+                    {selectedHskStats.total_words_count}
+                  </span>
+                </div>
+              )}
+            </div>
 
             {isLoading && <div className="words-loading">{text.loading}</div>}
 
@@ -118,16 +152,20 @@ function Words({ language }: WordsProps) {
               </div>
             )}
 
-            {words && (
-              <WordList
-                words={words}
-                userWordIds={userWordIds}
-                isAuthenticated={!!user}
-                onAddWord={handleAddWord}
-                onLoginRequired={() => setIsAuthModalOpen(true)}
-                language={language}
-              />
-            )}
+            {words &&
+              filteredWords &&
+              (filteredWords.length === 0 ? (
+                <p>{text.noWords}</p>
+              ) : (
+                <WordList
+                  words={filteredWords}
+                  userWordIds={userWordIds}
+                  isAuthenticated={!!user}
+                  onAddWord={handleAddWord}
+                  onLoginRequired={() => setIsAuthModalOpen(true)}
+                  language={language}
+                />
+              ))}
           </div>
         )}
       </section>

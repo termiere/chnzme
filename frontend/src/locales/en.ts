@@ -54,6 +54,7 @@ const en = {
   dictionary: {
     title: "Dictionary",
     search: "Search",
+    searchPlaceholder: "Pinyin or translation",
     empty: "Your dictionary is empty. Add words from the HSK section!",
     remove: "Remove",
     noWords: "No words found",
@@ -78,6 +79,10 @@ const en = {
 
     errorLoading: "Failed to load review",
     reviewError: "Failed to submit review. Please try again.",
+  },
+
+  profile: {
+    logout: "Log out",
   },
 };
 

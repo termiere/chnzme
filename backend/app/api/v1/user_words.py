@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, Query
 from sqlalchemy.orm import Session
 
 from app.dependency import get_current_user, get_session
@@ -24,20 +24,18 @@ def get_user_words(
 
 @router.get("/user-words/learn", response_model=list[UserWordResponse])
 def get_learn_words(
-    limit: int = 20,
     session: Session = Depends(get_session),
     current_user: User = Depends(get_current_user),
 ):
-    return user_words_service.get_learn_words(session, current_user.id, limit)
+    return user_words_service.get_learn_words(session, current_user.id)
 
 
 @router.get("/user-words/review", response_model=list[UserWordResponse])
 def get_review_words(
-    limit: int = 20,
     session: Session = Depends(get_session),
     current_user: User = Depends(get_current_user),
 ):
-    return user_words_service.get_review_words(session, current_user.id, limit)
+    return user_words_service.get_review_words(session, current_user.id)
 
 
 @router.get("/user-words/stats", response_model=UserWordsStatsResponse)
@@ -46,6 +44,17 @@ def get_user_words_stats(
     current_user: User = Depends(get_current_user),
 ):
     return user_words_service.get_user_words_stats(session, current_user.id)
+
+
+@router.get("/user-words/stats/hsk/{hsk_level}")
+def get_user_words_stats_by_hsk(
+    hsk_level: int,
+    session: Session = Depends(get_session),
+    current_user: User = Depends(get_current_user),
+):
+    return user_words_service.get_user_words_stats_by_hsk(
+        session, current_user.id, hsk_level
+    )
 
 
 @router.post("/user-words/{word_id}", response_model=UserWordResponse)

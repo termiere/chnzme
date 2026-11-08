@@ -78,3 +78,9 @@ def get_review_session_words(session: Session, user_id: int):
 
 def get_user_words_stats(session: Session, user_id: int):
     return user_words_repository.get_user_words_stats(session, user_id)
+
+
+def get_user_words_stats_by_hsk(session: Session, user_id: int, hsk_level: int):
+    return user_words_repository.get_user_words_stats_by_hsk(
+        session, user_id, hsk_level
+    )

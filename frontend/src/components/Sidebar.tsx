@@ -2,8 +2,8 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 import { useAuth } from "../context/AuthContext";
-import ProfileOverlay from "./ProfileOverlay";
 import LanguageSelector from "./LanguageSelector";
+import Profile from "../pages/Profile";
 
 import "../styles/Sidebar.css";
 
@@ -57,7 +57,7 @@ function Sidebar({ language, setLanguage, openAuth }: SidebarProps) {
       </aside>
 
       {isProfileOpen && (
-        <ProfileOverlay onClose={() => setIsProfileOpen(false)} />
+        <Profile language={language} onClose={() => setIsProfileOpen(false)} />
       )}
     </>
   );
